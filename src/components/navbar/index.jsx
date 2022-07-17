@@ -13,13 +13,20 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Pagrindinis', 'Nuomojami dviračiai', 'Kontaktai'];
+
+const pages = [
+  { text: 'Pagrindinis', to: '/' },
+  { text: 'Nuomojami dviračiai', to: '/rental-bikes' },
+  { text: 'Kontaktai', to: '/contacts' },
+]
 
 const Navbar = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -32,10 +39,10 @@ const Navbar = (props) => {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+        {pages.map((item) => (
+          <ListItem key={item.text} disablePadding>
+            <ListItemButton onClick={() => navigate(`${item.to}`)} sx={{ textAlign: 'center' }}>
+              <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -65,9 +72,9 @@ const Navbar = (props) => {
           </Typography>
 
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+            {pages.map((item) => (
+              <Button onClick={() => navigate(`${item.to}`)} key={item.text} sx={{ color: '#fff' }}>
+                {item.text}
               </Button>
             ))}
           </Box>
