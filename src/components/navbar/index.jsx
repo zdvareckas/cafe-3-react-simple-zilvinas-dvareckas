@@ -53,7 +53,7 @@ const Navbar = (props) => {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex', mb: 6 }}>
+    <Box sx={{ display: 'flex', mb: 8 }}>
       <AppBar component="nav" position='fixed' sx={{ mb: 3 }} >
         <Toolbar >
           <IconButton
