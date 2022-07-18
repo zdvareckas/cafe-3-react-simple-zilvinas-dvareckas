@@ -21,7 +21,7 @@ const pages = [
   { text: 'Pagrindinis', to: '/' },
   { text: 'Nuomojami dviračiai', to: '/rental-bikes' },
   { text: 'Kontaktai', to: '/contacts' },
-]
+];
 
 const Navbar = (props) => {
   const { window } = props;
@@ -54,21 +54,23 @@ const Navbar = (props) => {
 
   return (
     <Box sx={{ display: 'flex', mb: 8 }}>
-      <AppBar component="nav" position='fixed' sx={{ mb: 3 }} >
-        <Toolbar >
+      <AppBar component="nav" position="fixed" sx={{ mb: 3 }}>
+        <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
-          ><MenuIcon />
+          >
+            <MenuIcon />
           </IconButton>
 
           <Typography
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          ><DirectionsBikeIcon />
+          >
+            <DirectionsBikeIcon />
           </Typography>
 
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
@@ -99,8 +101,8 @@ const Navbar = (props) => {
         </Drawer>
       </Box>
 
-    </Box >
+    </Box>
   );
-}
+};
 
 export default Navbar;
