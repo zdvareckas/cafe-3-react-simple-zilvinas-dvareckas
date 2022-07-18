@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const RentalBikesPage = () => {
-  return (
-    <div>RentalBikesPage</div>
-  )
-}
+const RentalBikesPage = () => (
+  <div>RentalBikesPage</div>
+);
 
 export default RentalBikesPage;

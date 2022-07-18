@@ -5,7 +5,7 @@ import ContactsPage from './pages/contacts-page';
 import HomePage from './pages/home-page';
 import RentalBikesPage from './pages/rental-bikes-page';
 
-const App = () => {
+const App = () => (
   <BrowserRouter>
     <Navbar />
     <Routes>
@@ -13,7 +13,7 @@ const App = () => {
       <Route path="/rental-bikes" element={<RentalBikesPage />} />
       <Route path="/contacts" element={<ContactsPage />} />
     </Routes>
-  </BrowserRouter>;
-};
+  </BrowserRouter>
+);
 
 export default App;
