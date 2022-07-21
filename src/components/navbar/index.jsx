@@ -19,7 +19,7 @@ const drawerWidth = 240;
 
 const pages = [
   { text: 'Pagrindinis', to: '/' },
-  { text: 'Nuomojami dviračiai', to: '/rental-bikes' },
+  { text: 'Dviračiai', to: '/rental-bikes' },
   { text: 'Kontaktai', to: '/contacts' },
 ];
 
@@ -54,29 +54,37 @@ const Navbar = (props) => {
 
   return (
     <Box sx={{ display: 'flex', mb: 8 }}>
-      <AppBar component="nav" position="fixed" sx={{ mb: 3 }}>
+      <AppBar
+        component="nav"
+        position="fixed"
+        elevation={0}
+        color="transparent"
+        sx={{ mb: 3 }}
+      >
         <Toolbar>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: 'none' }, color: 'common.white' }}
           >
             <MenuIcon />
           </IconButton>
 
           <Typography
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: 'common.white' }}
           >
             <DirectionsBikeIcon />
           </Typography>
 
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {pages.map((item) => (
-              <Button onClick={() => navigate(`${item.to}`)} key={item.text} sx={{ color: '#fff' }}>
-                {item.text}
+            {pages.map(({ text, to }) => (
+              <Button
+                onClick={() => navigate(`${to}`)}
+                key={text}
+                sx={{ color: 'common.white' }}
+              >
+                {text}
               </Button>
             ))}
           </Box>

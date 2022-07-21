@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Box, styled, Typography } from '@mui/material';
-import ImageLink from './components/image-link';
+import {
+  Box, Button, styled, Typography,
+} from '@mui/material';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Background = styled(Box)({
   position: 'absolute',
@@ -9,42 +11,54 @@ const Background = styled(Box)({
   height: '100%',
   width: '100%',
   objectFit: 'cover',
-  objectPosition: 'center',
+  // objectPosition: 'center',
+  filter: 'brightness(60%)',
 });
 
 const Content = styled(Box)(({ theme }) => ({
-  position: 'relative',
+  position: 'absolute',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  height: '80%',
+  justifyContent: 'space-evenly',
+  height: 400,
   width: '100%',
-  color: theme.palette.warning.light,
-  padding: '20px',
+  color: theme.palette.common.white,
 }));
 
 const HomePage = () => (
   <>
     <Background component="img" src="/hero.jpg" />
     <Content component="main">
-      <Typography component="h1" variant="h2" sx={{ textAlign: 'center', color: '#F9954E' }}>
-        Dviračių nuoma sostinėje
+      <Typography
+        component="h1"
+        variant="h2"
+        sx={{
+          width: 550, textAlign: 'center', letterSpacing: 7,
+        }}
+      >
+        Dviračių nuoma Vilniuje
       </Typography>
-      <Typography variant="h6" sx={{ width: '600px', textAlign: 'center', color: 'black' }}>
+      <Typography
+        variant="h6"
+        sx={{
+          width: 550, textAlign: 'center', letterSpacing: 2,
+        }}
+      >
         Kviečiame įmonių kolektyvus ir mažas grupes aktyviai leisti laisvalaikį
         lauke ir rinktis miesto ekskursijas dviračiais,
         kalnų dviračių turus arba žygius dviračiais Vilniuje.
       </Typography>
       <Box
         component="div"
-        sx={
-          {
-            width: '20%', display: 'flex', justifyContent: 'center', gap: 5, pt: 1,
-          }
-        }
+        sx={{
+          width: '20%', display: 'flex', justifyContent: 'center', gap: 5, pt: 1,
+        }}
       >
-        <ImageLink text="Dviračiai" to="/rental-bikes" img="/home-card-img-1.jpg" />
-        <ImageLink text="Susisiekite" to="/contacts" img="/home-card-img-2.jpg" />
+        <Button size="large" variant="contained">Susisiekti</Button>
+        <Button size="large" variant="contained" endIcon={<ArrowForwardIosIcon fontSize="small" />}>
+          Dviračiai
+        </Button>
       </Box>
     </Content>
   </>
