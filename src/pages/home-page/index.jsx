@@ -3,6 +3,7 @@ import {
   Box, Button, styled, Typography,
 } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Navbar from '../../components/navbar';
 
 const Background = styled(Box)({
   position: 'absolute',
@@ -11,7 +12,6 @@ const Background = styled(Box)({
   height: '100%',
   width: '100%',
   objectFit: 'cover',
-  // objectPosition: 'center',
   filter: 'brightness(60%)',
 });
 
@@ -29,6 +29,7 @@ const Content = styled(Box)(({ theme }) => ({
 const HomePage = () => (
   <>
     <Background component="img" src="/hero.jpg" />
+    <Navbar bgColor="transparent" />
     <Content component="main">
       <Typography
         component="h1"

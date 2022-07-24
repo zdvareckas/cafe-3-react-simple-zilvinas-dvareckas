@@ -11,9 +11,9 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import { useNavigate } from 'react-router-dom';
+import * as Nav from './components';
 
 const drawerWidth = 240;
 
@@ -23,8 +23,8 @@ const pages = [
   { text: 'Kontaktai', to: '/contacts' },
 ];
 
-const Navbar = (props) => {
-  const { window } = props;
+const Navbar = ({ props, bgColor }) => {
+  const window = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
 
@@ -58,8 +58,7 @@ const Navbar = (props) => {
         component="nav"
         position="fixed"
         elevation={0}
-        color="transparent"
-        sx={{ mb: 3 }}
+        sx={{ mb: 3, background: `${bgColor}` }}
       >
         <Toolbar>
           <IconButton
@@ -77,15 +76,9 @@ const Navbar = (props) => {
             <DirectionsBikeIcon />
           </Typography>
 
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignSelf: 'stretch' }}>
             {pages.map(({ text, to }) => (
-              <Button
-                onClick={() => navigate(`${to}`)}
-                key={text}
-                sx={{ color: 'common.white' }}
-              >
-                {text}
-              </Button>
+              <Nav.Link key={to} to={to}>{text}</Nav.Link>
             ))}
           </Box>
         </Toolbar>
