@@ -1,36 +1,16 @@
 import * as React from 'react';
 import {
-  Box, Button, styled, Typography,
+  Box, Button, Typography,
 } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Navbar from '../../components/navbar';
-
-const Background = styled(Box)({
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  height: '100%',
-  width: '100%',
-  objectFit: 'cover',
-  filter: 'brightness(60%)',
-});
-
-const Content = styled(Box)(({ theme }) => ({
-  position: 'absolute',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'space-evenly',
-  height: 400,
-  width: '100%',
-  color: theme.palette.common.white,
-}));
+import * as Home from './components';
 
 const HomePage = () => (
   <>
-    <Background component="img" src="/hero.jpg" />
+    <Home.Background component="img" src="/hero.jpg" />
     <Navbar bgColor="transparent" />
-    <Content component="main">
+    <Home.Content component="main">
       <Typography
         component="h1"
         variant="h2"
@@ -61,7 +41,7 @@ const HomePage = () => (
           Dviračiai
         </Button>
       </Box>
-    </Content>
+    </Home.Content>
   </>
 );
 
