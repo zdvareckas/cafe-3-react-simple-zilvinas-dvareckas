@@ -4,10 +4,12 @@ import ContactsPage from './pages/contacts-page';
 import HomePage from './pages/home-page';
 import RentalBikesPage from './pages/rental-bikes-page';
 import ContactContext from './contexts/contact-context';
+import Navbar from './components/navbar';
 
 const App = () => (
   <BrowserRouter>
     <ContactContext.Provider value={14}>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/rental-bikes" element={<RentalBikesPage />} />

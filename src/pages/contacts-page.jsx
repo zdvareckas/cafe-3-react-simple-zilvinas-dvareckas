@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/navbar';
 import ContactContext from '../contexts/contact-context';
 
 const ContactsPage = () => {
@@ -7,10 +6,7 @@ const ContactsPage = () => {
   console.log('Contacts-page, contactContextValue', contactContext);
 
   return (
-    <>
-      <Navbar />
-      <div>ContactsPage</div>
-    </>
+    <div>ContactsPage</div>
   );
 };
 

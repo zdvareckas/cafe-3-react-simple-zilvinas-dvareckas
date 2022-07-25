@@ -3,13 +3,11 @@ import {
   Box, Button, Typography,
 } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import Navbar from '../../components/navbar';
 import * as Home from './components';
 
 const HomePage = () => (
   <>
     <Home.Background component="img" src="/hero.jpg" />
-    <Navbar bgColor="transparent" />
     <Home.Content component="main">
       <Typography
         component="h1"

@@ -24,11 +24,16 @@ const pages = [
   { text: 'Kontaktai', to: '/contacts' },
 ];
 
-const Navbar = ({ props, bgColor }) => {
-  const window = props;
+const Navbar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
   const contactContext = React.useContext(ContactContext);
+
+  let navBg = '';
+  if (window.location.pathname === '/') {
+    navBg += 'transparent';
+  }
+
   console.log('Navbar, contactContextValue', contactContext);
 
   const handleDrawerToggle = () => {
@@ -53,15 +58,13 @@ const Navbar = ({ props, bgColor }) => {
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
     <Box sx={{ display: 'flex', mb: 8 }}>
       <AppBar
         component="nav"
         position="fixed"
         elevation={0}
-        sx={{ mb: 3, background: `${bgColor}` }}
+        sx={{ mb: 3, background: `${navBg}` }}
       >
         <Toolbar>
           <IconButton
@@ -89,7 +92,6 @@ const Navbar = ({ props, bgColor }) => {
 
       <Box component="nav">
         <Drawer
-          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
