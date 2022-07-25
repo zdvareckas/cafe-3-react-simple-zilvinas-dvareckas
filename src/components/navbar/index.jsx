@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import { useNavigate } from 'react-router-dom';
 import * as Nav from './components';
+import ContactContext from '../../contexts/contact-context';
 
 const drawerWidth = 240;
 
@@ -27,6 +28,8 @@ const Navbar = ({ props, bgColor }) => {
   const window = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
+  const contactContext = React.useContext(ContactContext);
+  console.log('Navbar, contactContextValue', contactContext);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
