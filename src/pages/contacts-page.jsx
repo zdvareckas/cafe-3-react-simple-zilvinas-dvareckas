@@ -1,9 +1,9 @@
 import React from 'react';
-import ContactContext from '../contexts/contact-context';
+import RentalBikeContext from '../contexts/rental-bikes-context';
 
 const ContactsPage = () => {
-  const contactContext = React.useContext(ContactContext);
-  console.log('Contacts-page, contactContextValue', contactContext);
+  const rentalBikeContext = React.useContext(RentalBikeContext);
+  console.log('Contacts-page, contactContextValue', rentalBikeContext);
 
   return (
     <div>ContactsPage</div>

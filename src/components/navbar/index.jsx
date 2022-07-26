@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import { useNavigate } from 'react-router-dom';
 import * as Nav from './components';
-import ContactContext from '../../contexts/contact-context';
+import RentalBikesContext from '../../contexts/rental-bikes-context';
 
 const drawerWidth = 240;
 
@@ -27,14 +27,14 @@ const pages = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
-  const contactContext = React.useContext(ContactContext);
+  const rentalBikeContext = React.useContext(RentalBikesContext);
 
   let navBg = '';
   if (window.location.pathname === '/') {
     navBg += 'transparent';
   }
 
-  console.log('Navbar, contactContextValue', contactContext);
+  console.log('Navbar, rentalBikeContextValue', rentalBikeContext);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

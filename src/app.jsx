@@ -3,13 +3,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ContactsPage from './pages/contacts-page';
 import HomePage from './pages/home-page';
 import RentalBikesPage from './pages/rental-bikes-page';
-import ContactContext from './contexts/contact-context';
+import RentalBikeContext from './contexts/rental-bikes-context';
 import Navbar from './components/navbar';
 import ErrorPage from './pages/error-page';
 
 const App = () => (
   <BrowserRouter>
-    <ContactContext.Provider value={14}>
+    <RentalBikeContext.Provider value={14}>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -17,7 +17,7 @@ const App = () => (
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-    </ContactContext.Provider>
+    </RentalBikeContext.Provider>
   </BrowserRouter>
 );
 
