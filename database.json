@@ -2,7 +2,7 @@
   "bikes": [
     {
       "id": 1,
-      "title": "Specialized Rockhopper Expert 29",
+      "title": "Rockhopper Expert 29",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "Kalnų",
       "for": "Vyrų-Moterų",
@@ -17,20 +17,7 @@
     },
     {
       "id": 2,
-      "title": "Specialized Rockhopper Expert 27.5",
-      "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "category": "Kalnų",
-      "for": "Vyrų-Moterų",
-      "sizes": [
-        "S (Iki 1.65m)",
-        "M (Iki 1.78m)",
-        "L (Iki 1.85m)"
-      ],
-      "img": "https://assets.specialized.com/i/specialized/91522-31_ROCKHOPPER-EXPERT-29-LGNBLU-LTSIL_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
-    },
-    {
-      "id": 3,
-      "title": "Specialized Stumpjumper Alloy",
+      "title": "Stumpjumper Alloy",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "Kalnų",
       "for": "Vyrų-Moterų",
@@ -43,7 +30,7 @@
       "img": "https://assets.specialized.com/i/specialized/93321-71_SJ-ALLOY-BLZ-BLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
     },
     {
-      "id": 4,
+      "id": 3,
       "title": "Crux Comp",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "Kelių",
@@ -56,7 +43,7 @@
       "img": "https://assets.specialized.com/i/specialized/91422-50_CRUX-COMP-ARCTBLU-TARBLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
     },
     {
-      "id": 5,
+      "id": 4,
       "title": "S-Works Crux",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "Kelių",
@@ -68,7 +55,7 @@
       "img": "https://assets.specialized.com/i/specialized/91422-00_CRUX-SW-CARB-SPCTFLR-ABLN_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
     },
     {
-      "id": 6,
+      "id": 5,
       "title": "TCR ADVANCED PRO",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "Kelių",
@@ -81,7 +68,7 @@
       "img": "https://assets.specialized.com/i/specialized/91422-00_CRUX-SW-CARB-SPCTFLR-ABLN_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
     },
     {
-      "id": 7,
+      "id": 6,
       "title": "Riprock 24",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
       "category": "Kelių",
@@ -92,7 +79,7 @@
       "img": "https://assets.specialized.com/i/specialized/96522-76_RIPROCK-24_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
     },
     {
-      "id": 8,
+      "id": 7,
       "title": "Riprock Coaster 20",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
       "category": "Kelių",
@@ -103,7 +90,7 @@
       "img": "https://assets.specialized.com/i/specialized/165933?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
     },
     {
-      "id": 9,
+      "id": 8,
       "title": "Riprock Coaster 16",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
       "category": "Kelių",
@@ -114,7 +101,7 @@
       "img": "https://assets.specialized.com/i/specialized/96518-83_RIP_CSTR-16-INT_CNDYRED-BLK-WHT_HERO?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto"
     },
     {
-      "id": 10,
+      "id": 9,
       "title": "S-Works Epic",
       "description": "Dviračio geometrija pritaikyta 10+ metų vaikams.",
       "category": "Kalnų",

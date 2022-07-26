@@ -2,16 +2,20 @@ import React from 'react';
 import {
   Box,
   Card,
-  CardActions,
   CardContent,
-  CardMedia,
   Button,
   Typography,
+  Chip,
+  InputLabel,
+  Select,
+  MenuItem,
+  FormControl,
 } from '@mui/material';
-import RentalBikeContext from '../../contexts/rental-bikes-context';
+import * as BikeCard from './components';
+// import RentalBikeContext from '../../contexts/rental-bikes-context';
 
 const RentalBikesPage = () => {
-  const rentalBikeContext = React.useContext(RentalBikeContext);
+  // const rentalBikeContext = React.useContext(RentalBikeContext);
   const [bikes, setBikes] = React.useState([]);
   React.useEffect(() => {
     fetch('http://localhost:8000/bikes')
@@ -19,38 +23,56 @@ const RentalBikesPage = () => {
       .then((fetchedBikes) => setBikes(fetchedBikes));
   }, []);
 
-  console.log('RentalBikesPage, rentalBikeContextValue', rentalBikeContext);
+  // console.log('RentalBikesPage, rentalBikeContextValue', rentalBikeContext);
 
   return (
     <Box sx={{
-      display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 2, mt: 10, placeItems: 'center',
+      display: 'grid', gridTemplateColumns: 'repeat(4, 300px)', gap: 2, mt: 10, placeContent: 'center',
     }}
     >
       {bikes.map(({
-        id, title, description, category, img,
+        id,
+        title,
+        description,
+        category,
+        img,
+        sizes,
       }) => (
-        <Card key={id} sx={{ maxWidth: 345 }}>
-          <CardMedia
-            component="img"
-            height="200"
-            image={img}
-            alt={title}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+        <Card key={id}>
+          <BikeCard.Image component="img" src={img} />
+          <CardContent sx={{
+            display: 'flex', flexDirection: 'column', gap: 2,
+          }}
+          >
+            <Typography gutterBottom variant="h6" component="div">
               {title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body1">
               {description}
             </Typography>
-            <Typography color="text.secondary">
-              {category}
-            </Typography>
+            <Chip size="small" color="primary" label={category} sx={{ width: '25%' }} />
+            <FormControl size="small" sx={{ width: '50%' }}>
+              <InputLabel id="demo-simple-select-label">Dydis</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Age"
+              >
+                {sizes.map((size) => (
+                  <MenuItem key={size}>
+                    {size}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
           </CardContent>
-          <CardActions>
-            <Button size="small">Peržiūrėti</Button>
-            <Button size="small">Pridėti į užsakymą</Button>
-          </CardActions>
+          <Box sx={{
+            display: 'flex', py: 1, justifyContent: 'center', gap: 2,
+          }}
+          >
+            <Button variant="contained">Peržiūrėti</Button>
+            <Button variant="contained">Užsakyti</Button>
+          </Box>
         </Card>
       ))}
     </Box>
