@@ -1,17 +1,6 @@
 import React from 'react';
-import {
-  Box,
-  Card,
-  CardContent,
-  Button,
-  Typography,
-  Chip,
-  InputLabel,
-  Select,
-  MenuItem,
-  FormControl,
-} from '@mui/material';
-import * as BikeCard from './components';
+import { Box } from '@mui/material';
+import BikeCard from './components/bike-card';
 // import RentalBikeContext from '../../contexts/rental-bikes-context';
 
 const RentalBikesPage = () => {
@@ -38,42 +27,14 @@ const RentalBikesPage = () => {
         img,
         sizes,
       }) => (
-        <Card key={id}>
-          <BikeCard.Image component="img" src={img} />
-          <CardContent sx={{
-            display: 'flex', flexDirection: 'column', gap: 2,
-          }}
-          >
-            <Typography gutterBottom variant="h6" component="div">
-              {title}
-            </Typography>
-            <Typography variant="body1">
-              {description}
-            </Typography>
-            <Chip size="small" color="primary" label={category} sx={{ width: '25%' }} />
-            <FormControl size="small" sx={{ width: '50%' }}>
-              <InputLabel id="demo-simple-select-label">Dydis</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label="Age"
-              >
-                {sizes.map((size) => (
-                  <MenuItem key={size}>
-                    {size}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </CardContent>
-          <Box sx={{
-            display: 'flex', py: 1, justifyContent: 'center', gap: 2,
-          }}
-          >
-            <Button variant="contained">Peržiūrėti</Button>
-            <Button variant="contained">Užsakyti</Button>
-          </Box>
-        </Card>
+        <BikeCard
+          id={id}
+          title={title}
+          description={description}
+          category={category}
+          img={img}
+          sizes={sizes}
+        />
       ))}
     </Box>
   );
