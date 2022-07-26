@@ -5,6 +5,7 @@ import HomePage from './pages/home-page';
 import RentalBikesPage from './pages/rental-bikes-page';
 import ContactContext from './contexts/contact-context';
 import Navbar from './components/navbar';
+import ErrorPage from './pages/error-page';
 
 const App = () => (
   <BrowserRouter>
@@ -14,6 +15,7 @@ const App = () => (
         <Route path="/" element={<HomePage />} />
         <Route path="/rental-bikes" element={<RentalBikesPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </ContactContext.Provider>
   </BrowserRouter>
