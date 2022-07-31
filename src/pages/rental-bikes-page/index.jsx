@@ -16,7 +16,11 @@ const RentalBikesPage = () => {
 
   return (
     <Box sx={{
-      display: 'grid', gridTemplateColumns: 'repeat(4, 300px)', gap: 2, mt: 10, placeContent: 'center',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, 300px)',
+      gap: 2,
+      mt: 10,
+      placeContent: 'center',
     }}
     >
       {bikes.map(({
@@ -28,6 +32,7 @@ const RentalBikesPage = () => {
         sizes,
       }) => (
         <BikeCard
+          key={id}
           id={id}
           title={title}
           description={description}

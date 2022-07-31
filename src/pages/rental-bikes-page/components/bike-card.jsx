@@ -37,7 +37,7 @@ const BikeCard = ({
         {description}
       </Typography>
       <Chip size="small" color="primary" label={category} sx={{ width: '25%' }} />
-      <FormControl size="small" sx={{ width: '50%' }}>
+      <FormControl size="small">
         <InputLabel id="size-select">Dydis</InputLabel>
         <Select
           labelId="size-select"
