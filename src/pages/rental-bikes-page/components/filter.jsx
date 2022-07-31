@@ -11,7 +11,7 @@ import {
   FormLabel,
 } from '@mui/material';
 
-const genders = [
+const drivers = [
   {
     id: '1',
     label: 'Vyras',
@@ -26,14 +26,15 @@ const genders = [
   },
 ];
 
-const terrain = [
+const types = [
   { id: '1', label: 'Kelių' },
   { id: '2', label: 'Kalnų' },
+  { id: '3', label: 'Elektrinis' },
 ];
 
 const Filter = () => {
   const [driverFilter, setDriverFilter] = React.useState('');
-  const [terrainFilter, setTerrainFilter] = React.useState('');
+  const [bikeTypeFilter, setBikeTypeFilter] = React.useState('');
   const [riderHeightFilter, setRiderHeightFilter] = React.useState(0);
 
   return (
@@ -55,7 +56,7 @@ const Filter = () => {
             value={driverFilter}
             onChange={(_, newDriver) => setDriverFilter(newDriver)}
           >
-            {genders.map(({ label }) => (
+            {drivers.map(({ label }) => (
               <FormControlLabel
                 key={label}
                 value={label}
@@ -67,12 +68,12 @@ const Filter = () => {
         </FormControl>
 
         <FormControl>
-          <FormLabel>Reljefas:</FormLabel>
+          <FormLabel>Dviračio tipas:</FormLabel>
           <RadioGroup
-            value={terrainFilter}
-            onChange={(_, newTerrain) => setTerrainFilter(newTerrain)}
+            value={bikeTypeFilter}
+            onChange={(_, newBikeType) => setBikeTypeFilter(newBikeType)}
           >
-            {terrain.map(({ label }) => (
+            {types.map(({ label }) => (
               <FormControlLabel
                 key={label}
                 value={label}

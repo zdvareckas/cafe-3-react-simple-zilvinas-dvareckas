@@ -20,6 +20,7 @@ const BikeCard = ({
   description,
   category,
   sizes,
+  driver,
 }) => {
   const [bikeSize, setBikeSize] = React.useState('');
 
@@ -39,7 +40,8 @@ const BikeCard = ({
         <Typography variant="body1">
           {description}
         </Typography>
-        <Chip size="small" color="primary" label={category} sx={{ width: '25%' }} />
+        <Chip size="small" color="primary" label={category} />
+        <Chip size="small" color="primary" label={driver} />
         <FormControl size="small">
           <InputLabel id="size-select">Dydis</InputLabel>
           <Select

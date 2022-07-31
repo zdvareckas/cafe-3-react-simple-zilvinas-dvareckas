@@ -35,6 +35,7 @@ const RentalBikesPage = () => {
           category,
           img,
           sizes,
+          driver,
         }) => (
           <BikeCard
             key={id}
@@ -44,6 +45,7 @@ const RentalBikesPage = () => {
             category={category}
             img={img}
             sizes={sizes}
+            driver={driver}
           />
         ))}
       </Box>
