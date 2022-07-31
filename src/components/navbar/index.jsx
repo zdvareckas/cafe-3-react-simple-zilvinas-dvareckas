@@ -32,8 +32,10 @@ const Navbar = () => {
   const rentalBikeContext = React.useContext(RentalBikesContext);
 
   let navBg = '';
+  let elevation = 3;
   if (window.location.pathname === '/') {
     navBg += 'transparent';
+    elevation = 0;
   }
 
   console.log('Navbar, rentalBikeContextValue', rentalBikeContext);
@@ -65,7 +67,7 @@ const Navbar = () => {
       <AppBar
         component="nav"
         position="fixed"
-        elevation={0}
+        elevation={elevation}
         sx={{ mb: 3, background: `${navBg}` }}
       >
         <Toolbar>

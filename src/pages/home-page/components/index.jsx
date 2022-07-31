@@ -1,5 +1,7 @@
 import { Box, styled } from '@mui/material';
 
+export { default as Button } from './home-button';
+
 export const Background = styled(Box)({
   position: 'absolute',
   top: 0,

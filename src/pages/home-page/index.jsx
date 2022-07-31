@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {
-  Box, Button, Typography,
+  Box,
+  Typography,
 } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import * as Home from './components';
@@ -34,10 +35,13 @@ const HomePage = () => (
           width: '20%', display: 'flex', justifyContent: 'center', gap: 5, pt: 1,
         }}
       >
-        <Button size="large" variant="contained">Susisiekti</Button>
-        <Button size="large" variant="contained" endIcon={<ArrowForwardIosIcon fontSize="small" />}>
+        <Home.Button to="contacts">Susisiekti</Home.Button>
+        <Home.Button
+          to="rental-bikes"
+          endIcon={<ArrowForwardIosIcon fontSize="small" />}
+        >
           Dviračiai
-        </Button>
+        </Home.Button>
       </Box>
     </Home.Content>
   </>
