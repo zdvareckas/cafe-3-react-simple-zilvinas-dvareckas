@@ -5,7 +5,7 @@
       "title": "Rockhopper Expert 29",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "Kalnų",
-      "for": "Vyrų-Moterų",
+      "driver": "Vyrų-Moterų",
       "sizes": [
         "S (Iki 1.65m)",
         "M (Iki 1.78m)",
@@ -20,7 +20,7 @@
       "title": "Stumpjumper Alloy",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "Kalnų",
-      "for": "Vyrų-Moterų",
+      "driver": "Vyrų-Moterų",
       "sizes": [
         "S (Iki 1.65m)",
         "M (Iki 1.78m)",
@@ -34,7 +34,7 @@
       "title": "Crux Comp",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "Kelių",
-      "for": "Vyrų-Moterų",
+      "driver": "Vyrų-Moterų",
       "sizes": [
         "M (Iki 1.78m)",
         "L (Iki 1.85m)",
@@ -47,7 +47,7 @@
       "title": "S-Works Crux",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "Kelių",
-      "for": "Vyrų-Moterų",
+      "driver": "Vyrų-Moterų",
       "sizes": [
         "S (Iki 1.65m)",
         "M (Iki 1.78m)"
@@ -59,7 +59,7 @@
       "title": "TCR ADVANCED PRO",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "Kelių",
-      "for": "Vyrų-Moterų",
+      "driver": "Vyrų-Moterų",
       "sizes": [
         "L (Iki 1.85m)",
         "XL (Iki 1.93m)",
@@ -72,7 +72,7 @@
       "title": "Riprock 24",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
       "category": "Kelių",
-      "for": "Vaikų (Nuo iki 7m.)",
+      "driver": "Vaikų (iki 7m.)",
       "sizes": [
         "S (Iki 1.42m)"
       ],
@@ -83,7 +83,7 @@
       "title": "Riprock Coaster 20",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
       "category": "Kelių",
-      "for": "Vaikų (Iki 7m.)",
+      "driver": "Vaikų (Iki 7m.)",
       "sizes": [
         "S (Iki 1.42m)"
       ],
@@ -94,7 +94,7 @@
       "title": "Riprock Coaster 16",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
       "category": "Kelių",
-      "for": "Vaikų (Iki 7m.)",
+      "driver": "Vaikų (Iki 7m.)",
       "sizes": [
         "S (Iki 1.07m)"
       ],
@@ -105,7 +105,7 @@
       "title": "S-Works Epic",
       "description": "Dviračio geometrija pritaikyta 10+ metų vaikams.",
       "category": "Kalnų",
-      "for": "Vaikų (Nuo 10 m.)",
+      "driver": "Vaikų (Nuo 10 m.)",
       "sizes": [
         "S (Iki 1.55m)",
         "M (Iki 1.65m)",
@@ -118,7 +118,7 @@
       "title": "S-Works Epic Hardtail",
       "description": "Dviračio geometrija pritaikyta 10+ metų vaikams.",
       "category": "Kelių",
-      "for": "Vaikų (Nuo 10 m.)",
+      "driver": "Vaikų (Nuo 10 m.)",
       "sizes": [
         "S (Iki 1.55m)",
         "M (Iki 1.65m)",
@@ -131,7 +131,7 @@
       "title": "Turbo Tero 5.0",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "E-Bike",
-      "for": "Vyrų-Moterų",
+      "driver": "Vyrų-Moterų",
       "sizes": [
         "S (Iki 1.65m)",
         "M (Iki 1.78m)",
@@ -145,7 +145,7 @@
       "title": "S-Works Turbo Kenevo SL",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
       "category": "E-Bike",
-      "for": "Vyrų-Moterų",
+      "driver": "Vyrų-Moterų",
       "sizes": [
         "S (Iki 1.65m)",
         "M (Iki 1.78m)",
