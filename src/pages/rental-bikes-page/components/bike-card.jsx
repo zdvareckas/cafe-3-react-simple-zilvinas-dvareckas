@@ -21,6 +21,7 @@ const BikeCard = ({
   category,
   sizes,
   driver,
+  price,
 }) => {
   const [bikeSize, setBikeSize] = React.useState('');
 
@@ -29,9 +30,10 @@ const BikeCard = ({
       <Box>
         <Image component="img" src={img} />
       </Box>
-
       <CardContent sx={{
-        display: 'flex', flexDirection: 'column', gap: 2,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
       }}
       >
         <Typography gutterBottom variant="h6" component="div">
@@ -42,25 +44,39 @@ const BikeCard = ({
         </Typography>
         <Chip size="small" color="primary" label={category} />
         <Chip size="small" color="primary" label={driver} />
-        <FormControl size="small">
-          <InputLabel id="size-select">Dydis</InputLabel>
-          <Select
-            labelId="size-select"
-            id="size-select"
-            label="Dydis"
-            value={bikeSize}
-            onChange={(e) => setBikeSize(e.target.value)}
-          >
-            {sizes.map((size) => (
-              <MenuItem key={size} value={size}>
-                {size}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+        >
+          <FormControl size="small" sx={{ width: 1 / 2 }}>
+            <InputLabel id="size-select">Dydis</InputLabel>
+            <Select
+              labelId="size-select"
+              id="size-select"
+              label="Dydis"
+              value={bikeSize}
+              onChange={(e) => setBikeSize(e.target.value)}
+            >
+              {sizes.map((size) => (
+                <MenuItem key={size} value={size}>
+                  {size}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <Typography variant="body1">
+            {price}
+            /val.
+          </Typography>
+        </Box>
       </CardContent>
       <Box sx={{
-        display: 'flex', py: 1, justifyContent: 'center', gap: 2,
+        display: 'flex',
+        justifyContent: 'center',
+        gap: 2,
+        py: 1,
       }}
       >
         <Button variant="contained">Peržiūrėti</Button>

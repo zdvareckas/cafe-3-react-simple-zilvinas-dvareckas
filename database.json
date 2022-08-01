@@ -13,7 +13,8 @@
         "XL (Iki 1.93m)",
         "XXL (Iki 2m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/91822-34_ROCKHOPPER-EXPERT-29-OAKGRNMET-METWHTSIL_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/91822-34_ROCKHOPPER-EXPERT-29-OAKGRNMET-METWHTSIL_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 2,
@@ -27,7 +28,8 @@
         "L (Iki 1.85m)",
         "XL (Iki 1.93m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/93321-71_SJ-ALLOY-BLZ-BLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/93321-71_SJ-ALLOY-BLZ-BLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 3,
@@ -40,7 +42,8 @@
         "L (Iki 1.85m)",
         "XL (Iki 1.93m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/91422-50_CRUX-COMP-ARCTBLU-TARBLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/91422-50_CRUX-COMP-ARCTBLU-TARBLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 4,
@@ -52,7 +55,8 @@
         "S (Iki 1.65m)",
         "M (Iki 1.78m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/91422-00_CRUX-SW-CARB-SPCTFLR-ABLN_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/91422-00_CRUX-SW-CARB-SPCTFLR-ABLN_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 5,
@@ -65,7 +69,8 @@
         "XL (Iki 1.93m)",
         "XXL (Iki 2m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/91422-00_CRUX-SW-CARB-SPCTFLR-ABLN_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/91422-00_CRUX-SW-CARB-SPCTFLR-ABLN_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 6,
@@ -76,7 +81,8 @@
       "sizes": [
         "S (Iki 1.42m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/96522-76_RIPROCK-24_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/96522-76_RIPROCK-24_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 7,
@@ -87,7 +93,8 @@
       "sizes": [
         "S (Iki 1.42m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/165933?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/165933?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 8,
@@ -98,7 +105,8 @@
       "sizes": [
         "S (Iki 1.07m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/96518-83_RIP_CSTR-16-INT_CNDYRED-BLK-WHT_HERO?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/96518-83_RIP_CSTR-16-INT_CNDYRED-BLK-WHT_HERO?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 9,
@@ -111,7 +119,8 @@
         "M (Iki 1.65m)",
         "L (Iki 1.78m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/98021-00_KENEVO-SL-SW-CARBON-29-OAKGRNMET-BLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/98021-00_KENEVO-SL-SW-CARBON-29-OAKGRNMET-BLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 10,
@@ -124,7 +133,8 @@
         "M (Iki 1.65m)",
         "L (Iki 1.78m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/91322-00_EPIC-HT-SW-CARB-BLUMRNO-CHRM_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/91322-00_EPIC-HT-SW-CARB-BLUMRNO-CHRM_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 11,
@@ -138,7 +148,8 @@
         "L (Iki 1.85m)",
         "XL (Iki 195m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/95122-30_TERO-50-REDONYX-SMK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/95122-30_TERO-50-REDONYX-SMK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     },
     {
       "id": 12,
@@ -152,7 +163,8 @@
         "L (Iki 1.85m)",
         "XL (Iki 195m)"
       ],
-      "img": "https://assets.specialized.com/i/specialized/98021-00_KENEVO-SL-SW-CARBON-29-OAKGRNMET-BLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto"
+      "img": "https://assets.specialized.com/i/specialized/98021-00_KENEVO-SL-SW-CARBON-29-OAKGRNMET-BLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+      "price": "5.22€"
     }
   ]
 }

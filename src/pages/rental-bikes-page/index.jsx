@@ -23,6 +23,7 @@ const RentalBikesPage = () => {
           img,
           sizes,
           driver,
+          price,
         }) => (
           <BikeCard
             key={id}
@@ -33,6 +34,7 @@ const RentalBikesPage = () => {
             img={img}
             sizes={sizes}
             driver={driver}
+            price={price}
           />
         ))}
       </ItemsGrid>
