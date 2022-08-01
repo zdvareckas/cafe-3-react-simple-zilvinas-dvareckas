@@ -32,11 +32,19 @@ const HomePage = () => (
       <Box
         component="div"
         sx={{
-          width: '20%', display: 'flex', justifyContent: 'center', gap: 5, pt: 1,
+          display: 'flex',
+          gap: 5,
         }}
       >
-        <Home.Button to="contacts">Susisiekti</Home.Button>
         <Home.Button
+          variant="contained"
+          to="contacts"
+          color="success"
+        >
+          Susisiekti
+        </Home.Button>
+        <Home.Button
+          variant="outlined"
           to="rental-bikes"
           endIcon={<ArrowForwardIosIcon fontSize="small" />}
         >
