@@ -4,18 +4,14 @@ import {
 } from '@mui/material';
 import BikeCard from './components/bike-card';
 import Filter from './components/filter';
-// import RentalBikeContext from '../../contexts/rental-bikes-context';
 
 const RentalBikesPage = () => {
-  // const rentalBikeContext = React.useContext(RentalBikeContext);
   const [bikes, setBikes] = React.useState([]);
   React.useEffect(() => {
     fetch('http://localhost:8000/bikes')
       .then((res) => res.json())
       .then((fetchedBikes) => setBikes(fetchedBikes));
   }, []);
-
-  // console.log('RentalBikesPage, rentalBikeContextValue', rentalBikeContext);
 
   return (
     <>
