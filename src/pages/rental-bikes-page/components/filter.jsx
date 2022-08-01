@@ -39,12 +39,12 @@ const Filter = () => {
 
   return (
     <Box sx={{
-      width: '50%',
-      backgroundColor: '#fafafa',
       display: 'flex',
       flexDirection: 'column',
+      width: '700px',
       p: 2,
       mx: 'auto',
+      backgroundColor: '#fafafa',
     }}
     >
       <Typography variant="h5" align="center">Filtrai</Typography>
@@ -66,7 +66,6 @@ const Filter = () => {
             ))}
           </RadioGroup>
         </FormControl>
-
         <FormControl>
           <FormLabel>Dviračio tipas:</FormLabel>
           <RadioGroup
