@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {
   Box,
   Button,
@@ -11,12 +12,8 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import * as React from 'react';
-import CallIcon from '@mui/icons-material/Call';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-const ContactForm = () => {
+const InformationSection = () => {
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -25,18 +22,13 @@ const ContactForm = () => {
   const [terrain, setTerrain] = React.useState('');
 
   return (
-    <Box
-      component="form"
-      sx={{
+    <>
+      <Box sx={{
         display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        width: 1 / 4,
-        p: 5,
-        backgroundColor: 'grey.50',
+        flexDirection: { xs: 'column', lg: 'row' },
+        gap: 1,
       }}
-    >
-      <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1 }}>
+      >
         <TextField
           fullWidth
           label="Vardas"
@@ -54,7 +46,6 @@ const ContactForm = () => {
           onChange={(e) => setLastName(e.target.value)}
         />
       </Box>
-
       <TextField
         fullWidth
         label="El. Paštas"
@@ -94,59 +85,22 @@ const ContactForm = () => {
         >
           <FormControlLabel
             name="terrain"
-            label="Lygus"
-            value="Lygus"
+            label="Keliai"
+            value="Keliai"
             control={<Radio />}
           />
           <FormControlLabel
             name="terrain"
-            label="Nelygus"
-            value="Nelygus"
+            label="Miškai"
+            value="Miškai"
             control={<Radio />}
           />
         </RadioGroup>
       </FormControl>
-
       <Button type="submit" variant="contained">Susisiekti..</Button>
       <Divider />
-
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Typography variant="body2" align="left">
-          Kontaktinė informacija
-        </Typography>
-        <Typography sx={{
-          display: 'flex',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 1,
-        }}
-        >
-          <CallIcon />
-          +37062488856
-        </Typography>
-        <Typography sx={{
-          display: 'flex',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 1,
-        }}
-        >
-          <AlternateEmailIcon />
-          antanodviračiai@dviračiai.lt
-        </Typography>
-        <Typography sx={{
-          display: 'flex',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 1,
-        }}
-        >
-          <LocationOnIcon />
-          M. K. Čiurlionio g. 100, Vilnius 03100
-        </Typography>
-      </Box>
-    </Box>
+    </>
   );
 };
 
-export default ContactForm;
+export default InformationSection;
