@@ -1,9 +1,7 @@
 import * as React from 'react';
-import {
-  Box,
-} from '@mui/material';
 import BikeCard from './components/bike-card';
 import Filter from './components/filter';
+import { ItemsGrid } from './components';
 
 const RentalBikesPage = () => {
   const [bikes, setBikes] = React.useState([]);
@@ -16,14 +14,7 @@ const RentalBikesPage = () => {
   return (
     <>
       <Filter />
-      <Box sx={{
-        display: 'grid',
-        gridTemplateColumns: { sm: 'repeat(2, 300px)', md: 'repeat(3, 300px)', lg: 'repeat(4, 300px)' },
-        gap: 2,
-        mt: 10,
-        placeContent: 'center',
-      }}
-      >
+      <ItemsGrid>
         {bikes.map(({
           id,
           title,
@@ -44,9 +35,8 @@ const RentalBikesPage = () => {
             driver={driver}
           />
         ))}
-      </Box>
+      </ItemsGrid>
     </>
-
   );
 };
 
