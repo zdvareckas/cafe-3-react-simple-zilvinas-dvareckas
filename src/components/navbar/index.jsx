@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import * as Nav from './components';
-import RentalBikesContext from '../../contexts/rental-bikes-context';
+import BikeOrderContext from '../../contexts/bike-order-context';
 
 const drawerWidth = 240;
 
@@ -30,7 +30,7 @@ const pages = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
-  const rentalBikeContext = React.useContext(RentalBikesContext);
+  const orderContext = React.useContext(BikeOrderContext);
 
   let navBg = '';
   let elevation = 3;
@@ -39,7 +39,7 @@ const Navbar = () => {
     elevation = 0;
   }
 
-  console.log('Navbar, rentalBikeContextValue', rentalBikeContext);
+  console.log('Navbar, rentalBikeContextValue', orderContext);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

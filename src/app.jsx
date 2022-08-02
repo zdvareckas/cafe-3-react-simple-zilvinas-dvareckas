@@ -3,14 +3,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ContactsPage from './pages/contacts-page';
 import HomePage from './pages/home-page';
 import RentalBikesPage from './pages/rental-bikes-page';
-import RentalBikeContext from './contexts/rental-bikes-context';
+import BikeOrderContext from './contexts/bike-order-context';
 import Navbar from './components/navbar';
 import ErrorPage from './pages/error-page';
 import OrderPage from './pages/order-page';
 
 const App = () => (
   <BrowserRouter>
-    <RentalBikeContext.Provider value={14}>
+    <BikeOrderContext.Provider value={14}>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -19,7 +19,7 @@ const App = () => (
         <Route path="/order" element={<OrderPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-    </RentalBikeContext.Provider>
+    </BikeOrderContext.Provider>
   </BrowserRouter>
 );
 
