@@ -8,9 +8,11 @@ import Navbar from './components/navbar';
 import ErrorPage from './pages/error-page';
 import OrderPage from './pages/order-page';
 
+const orderItems = ['UZSAKYMAS1', 'UZSAKYMAS2'];
+
 const App = () => (
   <BrowserRouter>
-    <BikeOrderContext.Provider value={14}>
+    <BikeOrderContext.Provider value={orderItems}>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
