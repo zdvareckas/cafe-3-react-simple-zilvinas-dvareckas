@@ -72,16 +72,7 @@ const BikeCard = ({
           </Typography>
         </Box>
       </CardContent>
-      <Box sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        gap: 2,
-        py: 1,
-      }}
-      >
-        <Button variant="contained">Peržiūrėti</Button>
-        <Button variant="contained">Užsakyti</Button>
-      </Box>
+      <Button variant="contained" fullWidth>Užsakyti</Button>
     </Card>
   );
 };
