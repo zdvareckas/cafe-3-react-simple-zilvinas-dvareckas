@@ -12,6 +12,7 @@ import {
   Typography,
 } from '@mui/material';
 import { Image } from '../../../components';
+import BikeOrderContext from '../../../contexts/bike-order-context';
 
 const BikeCard = ({
   id,
@@ -22,8 +23,10 @@ const BikeCard = ({
   sizes,
   driver,
   price,
+  count = 1,
 }) => {
-  const [bikeSize, setBikeSize] = React.useState('');
+  const [bikeSize, setBikeSize] = React.useState('not selected');
+  const { addToOrder } = React.useContext(BikeOrderContext);
 
   return (
     <Card key={id}>
@@ -72,7 +75,15 @@ const BikeCard = ({
           </Typography>
         </Box>
       </CardContent>
-      <Button variant="contained" fullWidth>Užsakyti</Button>
+      <Button
+        variant="contained"
+        fullWidth
+        onClick={() => addToOrder({
+          id, title, bikeSize, count,
+        })}
+      >
+        Užsakyti
+      </Button>
     </Card>
   );
 };
