@@ -24,6 +24,7 @@ const pages = [
   { text: 'Pagrindinis', to: '/' },
   { text: 'Dviračiai', to: '/rental-bikes' },
   { text: 'Kontaktai', to: '/contacts' },
+  { text: 'Užsakymas', to: '/order' },
 ];
 
 const Navbar = () => {
