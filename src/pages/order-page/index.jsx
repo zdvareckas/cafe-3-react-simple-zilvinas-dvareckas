@@ -28,7 +28,7 @@ const OrderPage = () => {
           borderBottom: '2px solid black',
         }}
       >
-        Jūsų užsakymo informacija..
+        {orderItems.length === 0 ? 'Užsakymas yra tuščias..' : 'Jūsu pasirinkti dviračiai..'}
       </Typography>
       {orderItems.map(({
         id, title, count, bikeSize, price, category, img,
