@@ -25,7 +25,7 @@ const BikeCard = ({
   price,
   count = 1,
 }) => {
-  const [bikeSize, setBikeSize] = React.useState('not selected');
+  const [bikeSize, setBikeSize] = React.useState('');
   const { addToOrder } = React.useContext(BikeOrderContext);
 
   return (
@@ -78,9 +78,15 @@ const BikeCard = ({
       <Button
         variant="contained"
         fullWidth
-        onClick={() => addToOrder({
-          id, title, bikeSize, count,
-        })}
+        onClick={() => {
+          if (bikeSize.length === 0) {
+            alert('Pasirinkite dydi prieš pridedami.');
+          } else {
+            addToOrder({
+              id, title, bikeSize, count, price, category, img,
+            });
+          }
+        }}
       >
         Užsakyti
       </Button>
