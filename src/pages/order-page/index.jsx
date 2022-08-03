@@ -8,7 +8,6 @@ import BikeOrderContext from '../../contexts/bike-order-context';
 
 const OrderPage = () => {
   const { orderItems } = React.useContext(BikeOrderContext);
-  console.log(orderItems);
 
   return (
     <Box sx={{
@@ -35,7 +34,7 @@ const OrderPage = () => {
         id, title, count, bikeSize, price, category, img,
       }) => (
         <OrderItem
-          key={id}
+          key={`${id}${bikeSize}`}
           id={id}
           title={title}
           count={count}
