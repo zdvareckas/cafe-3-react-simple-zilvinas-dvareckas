@@ -23,10 +23,11 @@ const BikeCard = ({
   sizes,
   driver,
   price,
-  count = 1,
 }) => {
   const [bikeSize, setBikeSize] = React.useState('');
-  const { addToOrder } = React.useContext(BikeOrderContext);
+  const { orderItems, addToOrder } = React.useContext(BikeOrderContext);
+
+  const isExist = !!orderItems.find((x) => x.id === id && x.bikeSize === bikeSize);
 
   return (
     <Card key={id}>
@@ -76,6 +77,7 @@ const BikeCard = ({
         </Box>
       </CardContent>
       <Button
+        disabled={isExist}
         variant="contained"
         fullWidth
         onClick={() => {
@@ -83,7 +85,7 @@ const BikeCard = ({
             alert('Pasirinkite dydi prieš pridedami.');
           } else {
             addToOrder({
-              id, title, bikeSize, count, price, category, img,
+              id, title, bikeSize, price, category, img,
             });
           }
         }}

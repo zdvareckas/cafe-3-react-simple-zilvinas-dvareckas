@@ -14,12 +14,7 @@ const App = () => {
   const orderContextValue = React.useMemo(() => ({
     orderItems,
     addToOrder: (item) => {
-      const isMatching = orderItems.find((x) => x.id === item.id && x.bikeSize === item.bikeSize);
-      if (isMatching) {
-        console.log('ID and Size matches');
-      } else {
-        setOrderItems([...orderItems, item]);
-      }
+      setOrderItems([...orderItems, item]);
     },
   }), [orderItems]);
 

@@ -9,7 +9,12 @@ import {
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const OrderItem = ({
-  id, title, count, bikeSize, price, category, img,
+  id,
+  title,
+  bikeSize,
+  price,
+  category,
+  img,
 }) => (
   <>
     <Box
@@ -38,7 +43,7 @@ const OrderItem = ({
         </Typography>
       </Box>
       <Box sx={{ p: 4, width: '150px' }}>
-        <TextField value={count} type="number" size="small" />
+        <TextField type="number" size="small" />
       </Box>
       <Box sx={{ p: 4 }}>
         <Typography>
