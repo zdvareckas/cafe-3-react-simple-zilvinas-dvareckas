@@ -14,7 +14,7 @@ const OrderPage = () => {
         variant="h5"
         sx={{
           pb: 3,
-          borderBottom: '2px solid black',
+          borderBottom: '2px solid white',
         }}
       >
         {orderItems.length === 0 ? 'Užsakymas yra tuščias..' : 'Jūsu pasirinkti dviračiai..'}

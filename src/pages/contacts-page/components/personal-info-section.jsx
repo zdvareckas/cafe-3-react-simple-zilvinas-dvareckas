@@ -97,7 +97,7 @@ const InformationSection = () => {
           />
         </RadioGroup>
       </FormControl>
-      <Button type="submit" variant="contained">Susisiekti..</Button>
+      <Button type="submit" variant="contained" color="success">Susisiekti..</Button>
       <Divider />
     </>
   );

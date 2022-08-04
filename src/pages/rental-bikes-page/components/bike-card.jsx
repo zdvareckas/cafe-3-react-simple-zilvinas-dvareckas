@@ -30,17 +30,18 @@ const BikeCard = ({
   const isExist = !!orderItems.find((x) => x.id === id && x.bikeSize === bikeSize);
 
   return (
-    <Card key={id}>
+    <Card key={id} sx={{ borderRadius: '5px 5px 25px 25px' }}>
       <Box>
         <Image component="img" src={img} />
       </Box>
+
       <CardContent sx={{
         display: 'flex',
         flexDirection: 'column',
         gap: 2,
       }}
       >
-        <Typography gutterBottom variant="h6" component="div">
+        <Typography gutterBottom variant="h6">
           {title}
         </Typography>
         <Typography variant="body1">
@@ -55,10 +56,8 @@ const BikeCard = ({
         }}
         >
           <FormControl size="small" sx={{ width: 1 / 2 }}>
-            <InputLabel id="size-select">Dydis</InputLabel>
+            <InputLabel>Dydis</InputLabel>
             <Select
-              labelId="size-select"
-              id="size-select"
               label="Dydis"
               value={bikeSize}
               onChange={(e) => setBikeSize(e.target.value)}
@@ -77,6 +76,7 @@ const BikeCard = ({
         </Box>
       </CardContent>
       <Button
+        color="secondary"
         disabled={isExist}
         variant="contained"
         fullWidth
