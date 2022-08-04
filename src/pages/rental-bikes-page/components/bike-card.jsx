@@ -28,6 +28,7 @@ const BikeCard = ({
   const { orderItems, addToOrder } = React.useContext(BikeOrderContext);
 
   const isExist = !!orderItems.find((x) => x.id === id && x.bikeSize === bikeSize);
+  const customSizeID = `${id}${bikeSize}`;
 
   return (
     <Card key={id} sx={{ borderRadius: '5px 5px 25px 25px' }}>
@@ -85,7 +86,7 @@ const BikeCard = ({
             alert('Pasirinkite dydi prieš pridedami.');
           } else {
             addToOrder({
-              id, title, bikeSize, price, category, img,
+              id, title, bikeSize, price, category, img, customSizeID,
             });
           }
         }}

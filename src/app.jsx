@@ -16,6 +16,9 @@ const App = () => {
     addToOrder: (item) => {
       setOrderItems([...orderItems, item]);
     },
+    deleteOrderItem: (item) => setOrderItems(
+      orderItems.filter((x) => (x.customSizeID !== item.customSizeID)),
+    ),
   }), [orderItems]);
 
   return (
