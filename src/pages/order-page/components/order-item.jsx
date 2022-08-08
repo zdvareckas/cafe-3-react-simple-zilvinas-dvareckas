@@ -39,7 +39,7 @@ const OrderItem = ({
           sx={{ width: '240px' }}
         />
 
-        <Box sx={{ width: '200px', p: 2 }}>
+        <Box sx={{ width: { xs: '100%', md: '200px' }, p: 1 }}>
           <Typography>
             {title}
           </Typography>
@@ -76,7 +76,7 @@ const OrderItem = ({
         </Box>
         <IconButton onClick={() => deleteOrderItem({ customSizeID })}><DeleteIcon /></IconButton>
       </Box>
-      <Divider sx={{ backgroundColor: 'grey.400' }} />
+      <Divider sx={{ backgroundColor: 'grey.400', my: 2 }} />
     </>
   );
 };
