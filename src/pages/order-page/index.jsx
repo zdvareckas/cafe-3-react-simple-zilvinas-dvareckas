@@ -6,7 +6,6 @@ import Cart from './components/cart';
 
 const OrderPage = () => {
   const { orderItems } = React.useContext(BikeOrderContext);
-  const footerDisplay = orderItems.length === 0 ? 'none' : 'flex';
 
   return (
     <Box sx={{
@@ -43,7 +42,9 @@ const OrderPage = () => {
           ))}
         </Box>
         <Box sx={{
-          display: `${footerDisplay}`, justifyContent: 'space-between', pt: 3, justifySelf: 'flex-end',
+          display: `${orderItems.length === 0 ? 'none' : 'flex'}`,
+          justifyContent: 'space-between',
+          pt: 1,
         }}
         >
           <Box>
@@ -52,7 +53,6 @@ const OrderPage = () => {
           </Box>
           <Button variant="contained">Tęsti</Button>
         </Box>
-
       </Cart>
     </Box>
   );

@@ -74,7 +74,6 @@ const OrderItem = ({
             €
           </Typography>
         </Box>
-
         <IconButton onClick={() => deleteOrderItem({ customSizeID })}><DeleteIcon /></IconButton>
       </Box>
       <Divider sx={{ backgroundColor: 'grey.400' }} />

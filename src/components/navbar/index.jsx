@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import * as Nav from './components';
-import OrderContext from '../../contexts/bike-order-context';
+import BikeOrderContext from '../../contexts/bike-order-context';
 
 const drawerWidth = 240;
 
@@ -29,15 +29,10 @@ const pages = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
-  const { orderItems } = React.useContext(OrderContext);
-  const count = orderItems.length;
+  const { orderItems } = React.useContext(BikeOrderContext);
 
-  let navBg = '';
-  let elevation = 3;
-  if (window.location.pathname === '/') {
-    navBg += 'transparent';
-    elevation = 0;
-  }
+  const orderItemsCount = orderItems.length;
+  const isHomePage = window.location.pathname === '/';
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -61,7 +56,7 @@ const Navbar = () => {
           <ListItemButton onClick={() => navigate('/order')} sx={{ textAlign: 'center' }}>
             <ListItemText>
               Užsakymas (
-              {count}
+              {orderItemsCount}
               )
             </ListItemText>
           </ListItemButton>
@@ -75,8 +70,8 @@ const Navbar = () => {
       <AppBar
         component="nav"
         position="fixed"
-        elevation={elevation}
-        sx={{ mb: 3, background: `${navBg}` }}
+        elevation={isHomePage ? 0 : 3}
+        sx={{ mb: 3, background: `${isHomePage ? 'transparent' : ''}` }}
       >
         <Toolbar>
           <IconButton
@@ -101,7 +96,7 @@ const Navbar = () => {
             <Nav.Link key="užsakymas" to="/order">
               Užsakymas
               (
-              {count}
+              {orderItemsCount}
               )
             </Nav.Link>
           </Box>
