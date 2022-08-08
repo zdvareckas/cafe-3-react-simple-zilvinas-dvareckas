@@ -19,6 +19,7 @@ const OrderItem = ({
 }) => {
   const { deleteOrderItem } = React.useContext(BikeOrderContext);
   const customSizeID = `${id}${bikeSize}`;
+  const [count, setCount] = React.useState(1);
 
   return (
     <>
@@ -27,7 +28,8 @@ const OrderItem = ({
         sx={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: 2,
           pt: 1,
         }}
       >
@@ -36,7 +38,8 @@ const OrderItem = ({
           src={img}
           sx={{ width: '240px' }}
         />
-        <Box sx={{ p: 5, width: '200px' }}>
+
+        <Box sx={{ width: '200px', p: 2 }}>
           <Typography>
             {title}
           </Typography>
@@ -47,23 +50,34 @@ const OrderItem = ({
             {bikeSize}
           </Typography>
         </Box>
-        <Box sx={{ p: 4, width: '150px' }}>
-          <TextField type="number" size="small" />
-        </Box>
-        <Box sx={{ p: 4 }}>
-          <Typography>
+
+        <Box sx={{
+          display: 'flex',
+          alignItems: 'center',
+          textAlign: 'right',
+          gap: 2,
+        }}
+        >
+          <TextField
+            value={count}
+            onChange={(e) => setCount(e.target.value)}
+            type="number"
+            size="small"
+            sx={{ width: '100px' }}
+          />
+          <Typography sx={{ width: '60px' }}>
             {price}
+            €
+          </Typography>
+          <Typography sx={{ width: '60px' }}>
+            {(price * count).toFixed(2)}
+            €
           </Typography>
         </Box>
-        <Box sx={{ p: 4 }}>
-          <Typography>
-            Kainos suma
-          </Typography>
-        </Box>
+
         <IconButton onClick={() => deleteOrderItem({ customSizeID })}><DeleteIcon /></IconButton>
       </Box>
       <Divider sx={{ backgroundColor: 'grey.400' }} />
-
     </>
   );
 };

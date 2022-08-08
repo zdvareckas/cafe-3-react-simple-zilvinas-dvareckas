@@ -72,7 +72,7 @@ const BikeCard = ({
           </FormControl>
           <Typography variant="body1">
             {price}
-            /val.
+            €/val.
           </Typography>
         </Box>
       </CardContent>
