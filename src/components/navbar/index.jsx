@@ -24,13 +24,13 @@ const pages = [
   { text: 'Pagrindinis', to: '/' },
   { text: 'Dviračiai', to: '/rental-bikes' },
   { text: 'Kontaktai', to: '/contacts' },
-  { text: 'Užsakymas', to: '/order' },
 ];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
-  const orderContext = React.useContext(BikeOrderContext);
+  const { orderItems } = React.useContext(BikeOrderContext);
+  const count = orderItems.length;
 
   let navBg = '';
   let elevation = 3;
@@ -38,8 +38,6 @@ const Navbar = () => {
     navBg += 'transparent';
     elevation = 0;
   }
-
-  console.log('Navbar, rentalBikeContextValue', orderContext);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -59,6 +57,15 @@ const Navbar = () => {
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem key="užsakymas" disablePadding>
+          <ListItemButton onClick={() => navigate('/order')} sx={{ textAlign: 'center' }}>
+            <ListItemText>
+              Užsakymas (
+              {count}
+              )
+            </ListItemText>
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -91,6 +98,12 @@ const Navbar = () => {
             {pages.map(({ text, to }) => (
               <Nav.Link key={to} to={to}>{text}</Nav.Link>
             ))}
+            <Nav.Link key="užsakymas" to="/order">
+              Užsakymas
+              (
+              {count}
+              )
+            </Nav.Link>
           </Box>
         </Toolbar>
       </AppBar>
