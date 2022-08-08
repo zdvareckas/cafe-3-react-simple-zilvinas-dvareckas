@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import * as Nav from './components';
-import BikeOrderContext from '../../contexts/bike-order-context';
+import OrderContext from '../../contexts/bike-order-context';
 
 const drawerWidth = 240;
 
@@ -29,7 +29,7 @@ const pages = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
-  const { orderItems } = React.useContext(BikeOrderContext);
+  const { orderItems } = React.useContext(OrderContext);
   const count = orderItems.length;
 
   let navBg = '';
