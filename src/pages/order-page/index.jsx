@@ -4,8 +4,32 @@ import OrderItem from './components/order-item';
 import BikeOrderContext from '../../contexts/bike-order-context';
 import Cart from './components/cart';
 
+const fetchItem = async ({ id, bikeSize }) => {
+  const response = await fetch(`http://localhost:8000/bikes/${id}`);
+  const item = await response.json();
+
+  return {
+    ...item,
+    bikeSize,
+  };
+};
+
+const fetchOrderItems = async (orderItems) => {
+  const items = await Promise.all(orderItems.map((item) => fetchItem(item)));
+
+  return items;
+};
+
 const OrderPage = () => {
   const { orderItems } = React.useContext(BikeOrderContext);
+  const [order, setOrder] = React.useState([]);
+
+  React.useEffect(() => {
+    (async () => {
+      const fetchedBikes = await fetchOrderItems(orderItems);
+      setOrder(fetchedBikes);
+    })();
+  }, [orderItems]);
 
   return (
     <Box sx={{
@@ -26,7 +50,7 @@ const OrderPage = () => {
           {orderItems.length === 0 ? 'Užsakymas yra tuščias..' : 'Jūsu pasirinkti dviračiai..'}
         </Typography>
         <Box>
-          {orderItems.map(({
+          {order.map(({
             id, title, count, bikeSize, price, category, img,
           }) => (
             <OrderItem
