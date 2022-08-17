@@ -12,6 +12,11 @@ const theme = createTheme({
   background: {
     default: '#fafafa',
   },
+  mixins: {
+    navbar: {
+      height: '64px',
+    },
+  },
 });
 
 export default theme;

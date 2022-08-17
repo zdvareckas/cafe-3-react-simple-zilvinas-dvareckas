@@ -66,7 +66,7 @@ const Navbar = () => {
   );
 
   return (
-    <Box sx={{ display: 'flex', mb: 8 }}>
+    <Box sx={{ display: 'flex' }}>
       <AppBar
         component="nav"
         position="fixed"
