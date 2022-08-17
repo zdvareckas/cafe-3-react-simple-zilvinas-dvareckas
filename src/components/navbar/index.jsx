@@ -17,6 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import * as Nav from './components';
 import BikeOrderContext from '../../contexts/bike-order-context';
+import LoginMenu from './components/login-menu';
 
 const drawerWidth = 240;
 
@@ -99,6 +100,8 @@ const Navbar = () => {
               {orderItemsCount}
               )
             </Nav.Link>
+
+            <LoginMenu />
           </Box>
         </Toolbar>
       </AppBar>
