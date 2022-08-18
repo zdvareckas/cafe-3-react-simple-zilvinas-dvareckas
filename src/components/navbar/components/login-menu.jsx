@@ -5,6 +5,7 @@ import {
 } from '@mui/material';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import AuthForm from '../../auth-form';
 
 const LoginMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -23,7 +24,8 @@ const LoginMenu = () => {
 
   const validationSchema = yup.object({
     email: yup.string()
-      .required('Privaloma'),
+      .required('Privaloma')
+      .email('Netinkamas El. Pašto formatas'),
     password: yup.string()
       .required('Privaloma')
       .min(8, 'Per trumpas slaptažodis'),
@@ -60,9 +62,9 @@ const LoginMenu = () => {
           },
         }}
       >
-        <Box
-          component="form"
-          sx={{ display: 'flex', gap: 2, flexDirection: 'column' }}
+        <AuthForm
+          btnDisabled={!dirty || !isValid}
+          btnText="Prisijungti..."
           onSubmit={handleSubmit}
         >
           <TextField
@@ -86,15 +88,7 @@ const LoginMenu = () => {
             error={touched.password && Boolean(errors.password)}
             helperText={touched.password && errors.password}
           />
-          <Button
-            variant="contained"
-            color="success"
-            type="submit"
-            disabled={!dirty || !isValid}
-          >
-            Prisijungti..
-          </Button>
-        </Box>
+        </AuthForm>
         <Typography textAlign="center" variant="body1" sx={{ my: 2 }}>Arba</Typography>
         <Button
           href="/auth/register"
