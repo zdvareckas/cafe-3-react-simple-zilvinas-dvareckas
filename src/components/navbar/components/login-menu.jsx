@@ -3,6 +3,8 @@ import Menu from '@mui/material/Menu';
 import {
   Box, TextField, Button, Typography,
 } from '@mui/material';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
 
 const LoginMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -13,6 +15,32 @@ const LoginMenu = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const initialValues = {
+    email: '',
+    password: '',
+  };
+
+  const validationSchema = yup.object({
+    email: yup.string()
+      .required('Privaloma'),
+    password: yup.string()
+      .required('Privaloma')
+      .min(8, 'Per trumpas slaptažodis'),
+  });
+
+  const onSubmit = (values) => {
+    console.log(values);
+  };
+
+  const {
+    values, dirty, errors, touched, isValid,
+    handleSubmit, handleChange, handleBlur,
+  } = useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+  });
 
   return (
     <Box sx={{ display: 'flex', alignSelf: 'strech' }}>
@@ -34,14 +62,47 @@ const LoginMenu = () => {
       >
         <Box
           component="form"
-          sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}
+          sx={{ display: 'flex', gap: 2, flexDirection: 'column' }}
+          onSubmit={handleSubmit}
         >
-          <TextField name="email" label="El. Paštas" size="small" />
-          <TextField name="password" label="Slaptažodis" size="small" />
-          <Button variant="contained" color="success" type="submit"> Prisijungti..</Button>
+          <TextField
+            name="email"
+            label="El. Paštas"
+            size="small"
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.email && Boolean(errors.email)}
+            helperText={touched.email && errors.email}
+          />
+          <TextField
+            name="password"
+            label="Slaptažodis"
+            size="small"
+            type="password"
+            value={values.password}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.password && Boolean(errors.password)}
+            helperText={touched.password && errors.password}
+          />
+          <Button
+            variant="contained"
+            color="success"
+            type="submit"
+            disabled={!dirty || !isValid}
+          >
+            Prisijungti..
+          </Button>
         </Box>
         <Typography textAlign="center" variant="body1" sx={{ my: 2 }}>Arba</Typography>
-        <Button fullWidth variant="contained">Registruotis..</Button>
+        <Button
+          href="/auth/register"
+          fullWidth
+          variant="contained"
+        >
+          Registruotis..
+        </Button>
       </Menu>
     </Box>
   );
