@@ -18,6 +18,7 @@ import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import * as Nav from './components';
 import BikeOrderContext from '../../contexts/bike-order-context';
 import LoginMenu from './components/login-menu';
+import LoginForm from '../login-form';
 
 const drawerWidth = 240;
 
@@ -40,29 +41,42 @@ const Navbar = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        <DirectionsBikeIcon />
-      </Typography>
-      <Divider />
-      <List>
-        {pages.map((item) => (
-          <ListItem key={item.text} disablePadding>
-            <ListItemButton onClick={() => navigate(`${item.to}`)} sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.text} />
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: '100%',
+        margin: 1,
+      }}
+    >
+      <Box>
+        <Typography variant="h6" textAlign="center" sx={{ my: 2 }}>
+          <DirectionsBikeIcon />
+        </Typography>
+
+        <Divider />
+
+        <List>
+          {pages.map((item) => (
+            <ListItem key={item.text} disablePadding>
+              <ListItemButton onClick={() => navigate(`${item.to}`)} sx={{ textAlign: 'center' }}>
+                <ListItemText primary={item.text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+          <ListItem disablePadding>
+            <ListItemButton onClick={() => navigate('/order')} sx={{ textAlign: 'center' }}>
+              <ListItemText>
+                Užsakymas (
+                {orderItemsCount}
+                )
+              </ListItemText>
             </ListItemButton>
           </ListItem>
-        ))}
-        <ListItem key="užsakymas" disablePadding>
-          <ListItemButton onClick={() => navigate('/order')} sx={{ textAlign: 'center' }}>
-            <ListItemText>
-              Užsakymas (
-              {orderItemsCount}
-              )
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-      </List>
+        </List>
+      </Box>
+      <LoginForm />
     </Box>
   );
 
@@ -100,7 +114,6 @@ const Navbar = () => {
               {orderItemsCount}
               )
             </Nav.Link>
-
             <LoginMenu />
           </Box>
         </Toolbar>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-  TextField, Button, Typography,
+  TextField, Button, Box,
 } from '@mui/material';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -11,7 +11,6 @@ const LoginForm = () => {
     email: '',
     password: '',
   };
-
   const validationSchema = yup.object({
     email: yup.string()
       .required('Privaloma')
@@ -35,7 +34,7 @@ const LoginForm = () => {
   });
 
   return (
-    <>
+    <Box>
       <AuthForm
         btnDisabled={!dirty || !isValid}
         btnText="Prisijungti..."
@@ -62,16 +61,16 @@ const LoginForm = () => {
           error={touched.password && Boolean(errors.password)}
           helperText={touched.password && errors.password}
         />
+        <Button
+          href="/auth/register"
+          fullWidth
+          variant="contained"
+          sx={{ order: 2 }}
+        >
+          Registruotis..
+        </Button>
       </AuthForm>
-      <Typography textAlign="center" variant="body1" sx={{ my: 2 }}>Arba</Typography>
-      <Button
-        href="/auth/register"
-        fullWidth
-        variant="contained"
-      >
-        Registruotis..
-      </Button>
-    </>
+    </Box>
   );
 };
 
