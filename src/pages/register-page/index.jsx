@@ -14,6 +14,7 @@ const RegisterPage = () => {
     password: '',
     repeatPassword: '',
     gender: '',
+    newsLetter: false,
   };
 
   const validationSchema = yup.object({
@@ -126,7 +127,16 @@ const RegisterPage = () => {
         <MenuItem value="Vyras">Vyras</MenuItem>
         <MenuItem value="Moteris">Moteris</MenuItem>
       </TextField>
-      <FormControlLabel control={<Checkbox />} label="Gauti naujienlaiškį" />
+      <FormControlLabel
+        control={(
+          <Checkbox
+            name="newsLetter"
+            value={values.newsLetter}
+            onChange={handleChange}
+          />
+        )}
+        label="Gauti naujienlaiškį"
+      />
     </AuthForm>
   );
 };
