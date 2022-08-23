@@ -5,7 +5,7 @@ import BikeOrderContext from '../../contexts/bike-order-context';
 import Cart from './components/cart';
 
 const fetchItem = async ({ id, bikeSize }) => {
-  const response = await fetch(`http://localhost:8000/bikes/${id}`);
+  const response = await fetch(`http://localhost:8000/bikes/${id}?_expand=category`);
   const item = await response.json();
 
   return {

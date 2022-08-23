@@ -11,8 +11,6 @@ const RentalBikesPage = () => {
       .then((fetchedBikes) => setBikes(fetchedBikes));
   }, []);
 
-  console.log(bikes);
-
   return (
     <>
       <Filter />

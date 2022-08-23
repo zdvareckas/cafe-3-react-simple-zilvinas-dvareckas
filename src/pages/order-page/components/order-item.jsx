@@ -44,7 +44,7 @@ const OrderItem = ({
             {title}
           </Typography>
           <Typography>
-            {category}
+            {category.label}
           </Typography>
           <Typography>
             {bikeSize}
