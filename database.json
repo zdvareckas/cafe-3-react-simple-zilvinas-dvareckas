@@ -184,15 +184,15 @@
   "drivers": [
     {
       "id": "1",
-      "label": "Vyras"
+      "label": "Vyrų"
     },
     {
       "id": "2",
-      "label": "Moteris"
+      "label": "Moterų"
     },
     {
       "id": "3",
-      "label": "Vaikas"
+      "label": "Vaikų"
     }
   ]
 }
