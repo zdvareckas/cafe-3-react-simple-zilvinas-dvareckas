@@ -4,8 +4,8 @@
       "id": 1,
       "title": "Rockhopper Expert 29",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "category": "Kalnų",
-      "driver": "Vyrų-Moterų",
+      "categoryId": "1",
+      "driverId": "1",
       "sizes": [
         "S (Iki 1.65m)",
         "M (Iki 1.78m)",
@@ -20,8 +20,8 @@
       "id": 2,
       "title": "Stumpjumper Alloy",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "category": "Kalnų",
-      "driver": "Vyrų-Moterų",
+      "categoryId": "1",
+      "driverId": "1",
       "sizes": [
         "S (Iki 1.65m)",
         "M (Iki 1.78m)",
@@ -35,8 +35,8 @@
       "id": 3,
       "title": "Crux Comp",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "category": "Kelių",
-      "driver": "Vyrų-Moterų",
+      "categoryId": "2",
+      "driverId": "2",
       "sizes": [
         "M (Iki 1.78m)",
         "L (Iki 1.85m)",
@@ -49,8 +49,8 @@
       "id": 4,
       "title": "S-Works Crux",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "category": "Kelių",
-      "driver": "Vyrų-Moterų",
+      "categoryId": "2",
+      "driverId": "2",
       "sizes": [
         "S (Iki 1.65m)",
         "M (Iki 1.78m)"
@@ -62,8 +62,8 @@
       "id": 5,
       "title": "TCR ADVANCED PRO",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "category": "Kelių",
-      "driver": "Vyrų-Moterų",
+      "categoryId": "2",
+      "driverId": "1",
       "sizes": [
         "L (Iki 1.85m)",
         "XL (Iki 1.93m)",
@@ -76,8 +76,8 @@
       "id": 6,
       "title": "Riprock 24",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
-      "category": "Kelių",
-      "driver": "Vaikų (iki 7m.)",
+      "categoryId": "2",
+      "driverId": "3",
       "sizes": [
         "S (Iki 1.42m)"
       ],
@@ -88,8 +88,8 @@
       "id": 7,
       "title": "Riprock Coaster 20",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
-      "category": "Kelių",
-      "driver": "Vaikų (Iki 7m.)",
+      "categoryId": "2",
+      "driverId": "3",
       "sizes": [
         "S (Iki 1.42m)"
       ],
@@ -100,8 +100,8 @@
       "id": 8,
       "title": "Riprock Coaster 16",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
-      "category": "Kelių",
-      "driver": "Vaikų (Iki 7m.)",
+      "categoryId": "2",
+      "driverId": "3",
       "sizes": [
         "S (Iki 1.07m)"
       ],
@@ -112,8 +112,8 @@
       "id": 9,
       "title": "S-Works Epic",
       "description": "Dviračio geometrija pritaikyta 10+ metų vaikams.",
-      "category": "Kalnų",
-      "driver": "Vaikų (Nuo 10 m.)",
+      "categoryId": "1",
+      "driverId": "3",
       "sizes": [
         "S (Iki 1.55m)",
         "M (Iki 1.65m)",
@@ -126,8 +126,8 @@
       "id": 10,
       "title": "S-Works Epic Hardtail",
       "description": "Dviračio geometrija pritaikyta 10+ metų vaikams.",
-      "category": "Kelių",
-      "driver": "Vaikų (Nuo 10 m.)",
+      "categoryId": "2",
+      "driverId": "3",
       "sizes": [
         "S (Iki 1.55m)",
         "M (Iki 1.65m)",
@@ -140,8 +140,8 @@
       "id": 11,
       "title": "Turbo Tero 5.0",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "category": "E-Bike",
-      "driver": "Vyrų-Moterų",
+      "categoryId": "3",
+      "driverId": "1",
       "sizes": [
         "S (Iki 1.65m)",
         "M (Iki 1.78m)",
@@ -155,8 +155,8 @@
       "id": 12,
       "title": "S-Works Turbo Kenevo SL",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "category": "E-Bike",
-      "driver": "Vyrų-Moterų",
+      "categoryId": "3",
+      "driverId": "1",
       "sizes": [
         "S (Iki 1.65m)",
         "M (Iki 1.78m)",
@@ -165,6 +165,34 @@
       ],
       "img": "https://assets.specialized.com/i/specialized/98021-00_KENEVO-SL-SW-CARBON-29-OAKGRNMET-BLK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
       "price": 5.22
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "label": "Kalnų"
+    },
+    {
+      "id": "2",
+      "label": "Kelių"
+    },
+    {
+      "id": "3",
+      "label": "Elektinis"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "1",
+      "label": "Vyras"
+    },
+    {
+      "id": "2",
+      "label": "Moteris"
+    },
+    {
+      "id": "3",
+      "label": "Vaikas"
     }
   ]
 }
