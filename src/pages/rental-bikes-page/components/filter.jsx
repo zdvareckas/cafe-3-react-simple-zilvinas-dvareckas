@@ -11,31 +11,24 @@ import {
   FormLabel,
 } from '@mui/material';
 
-const drivers = [
-  {
-    id: '1',
-    label: 'Vyras',
-  },
-  {
-    id: '2',
-    label: 'Moteris',
-  },
-  {
-    id: '3',
-    label: 'Vaikas',
-  },
-];
-
-const types = [
-  { id: '1', label: 'Kelių' },
-  { id: '2', label: 'Kalnų' },
-  { id: '3', label: 'Elektrinis' },
-];
-
 const Filter = () => {
   const [driverFilter, setDriverFilter] = React.useState('');
   const [bikeTypeFilter, setBikeTypeFilter] = React.useState('');
   const [riderHeightFilter, setRiderHeightFilter] = React.useState(0);
+
+  const [types, setTypes] = React.useState([]);
+  React.useEffect(() => {
+    fetch('http://localhost:8000/categories')
+      .then((res) => res.json())
+      .then((fetchedTypes) => setTypes(fetchedTypes));
+  }, []);
+
+  const [drivers, setDrivers] = React.useState([]);
+  React.useEffect(() => {
+    fetch('http://localhost:8000/drivers')
+      .then((res) => res.json())
+      .then((fetchedDrivers) => setDrivers(fetchedDrivers));
+  }, []);
 
   return (
     <Box sx={{
@@ -56,9 +49,9 @@ const Filter = () => {
             value={driverFilter}
             onChange={(_, newDriver) => setDriverFilter(newDriver)}
           >
-            {drivers.map(({ label }) => (
+            {drivers.map(({ id, label }) => (
               <FormControlLabel
-                key={label}
+                key={id}
                 value={label}
                 label={label}
                 control={<Radio />}
@@ -72,9 +65,9 @@ const Filter = () => {
             value={bikeTypeFilter}
             onChange={(_, newBikeType) => setBikeTypeFilter(newBikeType)}
           >
-            {types.map(({ label }) => (
+            {types.map(({ id, label }) => (
               <FormControlLabel
-                key={label}
+                key={id}
                 value={label}
                 control={<Radio />}
                 label={label}
