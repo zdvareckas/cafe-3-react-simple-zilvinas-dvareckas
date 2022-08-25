@@ -2,13 +2,18 @@ import * as React from 'react';
 import BikeCard from './components/bike-card';
 import Filter from './components/filter';
 import { ItemsGrid } from './components';
+import { bikeService } from '../../services/bike-service';
 
 const RentalBikesPage = () => {
   const [bikes, setBikes] = React.useState([]);
+
+  const handleBikeFetch = async () => {
+    const fetchedBikes = await bikeService.fetchAll();
+    setBikes(fetchedBikes);
+  };
+
   React.useEffect(() => {
-    fetch('http://localhost:8000/bikes?_expand=category&_expand=driver')
-      .then((res) => res.json())
-      .then((fetchedBikes) => setBikes(fetchedBikes));
+    handleBikeFetch();
   }, []);
 
   return (
