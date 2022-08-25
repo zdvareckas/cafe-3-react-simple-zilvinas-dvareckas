@@ -7,8 +7,8 @@ const fetchAll = async () => {
   return fetchedCategories;
 };
 
-const bikeCategoriesService = {
+const bikeTypesService = {
   fetchAll,
 };
 
-export default bikeCategoriesService;
+export default bikeTypesService;

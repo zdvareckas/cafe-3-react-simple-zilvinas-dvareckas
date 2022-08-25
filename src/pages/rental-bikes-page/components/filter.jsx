@@ -11,7 +11,7 @@ import {
   FormLabel,
 } from '@mui/material';
 import bikeDriversService from '../../../services/bike-drivers-service';
-import bikeCategoriesService from '../../../services/bike-category-service';
+import bikeTypesService from '../../../services/bike-types-service';
 
 const Filter = () => {
   const [driverFilter, setDriverFilter] = React.useState('');
@@ -24,7 +24,7 @@ const Filter = () => {
   React.useEffect(() => {
     (async () => {
       const [fetchedTypes, fetchedDrivers] = await Promise.all([
-        bikeCategoriesService.fetchAll(),
+        bikeTypesService.fetchAll(),
         bikeDriversService.fetchAll(),
       ]);
       setBikeTypes(fetchedTypes);
