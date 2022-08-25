@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Rockhopper Expert 29",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "categoryId": "1",
+      "typeId": "1",
       "driverId": "1",
       "sizes": [
         "S (Iki 1.65m)",
@@ -20,7 +20,7 @@
       "id": 2,
       "title": "Stumpjumper Alloy",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "categoryId": "1",
+      "typeId": "1",
       "driverId": "1",
       "sizes": [
         "S (Iki 1.65m)",
@@ -35,7 +35,7 @@
       "id": 3,
       "title": "Crux Comp",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "categoryId": "2",
+      "typeId": "2",
       "driverId": "2",
       "sizes": [
         "M (Iki 1.78m)",
@@ -49,7 +49,7 @@
       "id": 4,
       "title": "S-Works Crux",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "categoryId": "2",
+      "typeId": "2",
       "driverId": "2",
       "sizes": [
         "S (Iki 1.65m)",
@@ -62,7 +62,7 @@
       "id": 5,
       "title": "TCR ADVANCED PRO",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "categoryId": "2",
+      "typeId": "2",
       "driverId": "1",
       "sizes": [
         "L (Iki 1.85m)",
@@ -76,7 +76,7 @@
       "id": 6,
       "title": "Riprock 24",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
-      "categoryId": "2",
+      "typeId": "2",
       "driverId": "3",
       "sizes": [
         "S (Iki 1.42m)"
@@ -88,7 +88,7 @@
       "id": 7,
       "title": "Riprock Coaster 20",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
-      "categoryId": "2",
+      "typeId": "2",
       "driverId": "3",
       "sizes": [
         "S (Iki 1.42m)"
@@ -100,7 +100,7 @@
       "id": 8,
       "title": "Riprock Coaster 16",
       "description": "Dviračio geometrija pritaikyta 4-7+ metų vaikams.",
-      "categoryId": "2",
+      "typeId": "2",
       "driverId": "3",
       "sizes": [
         "S (Iki 1.07m)"
@@ -112,7 +112,7 @@
       "id": 9,
       "title": "S-Works Epic",
       "description": "Dviračio geometrija pritaikyta 10+ metų vaikams.",
-      "categoryId": "1",
+      "typeId": "1",
       "driverId": "3",
       "sizes": [
         "S (Iki 1.55m)",
@@ -126,7 +126,7 @@
       "id": 10,
       "title": "S-Works Epic Hardtail",
       "description": "Dviračio geometrija pritaikyta 10+ metų vaikams.",
-      "categoryId": "2",
+      "typeId": "2",
       "driverId": "3",
       "sizes": [
         "S (Iki 1.55m)",
@@ -140,7 +140,7 @@
       "id": 11,
       "title": "Turbo Tero 5.0",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "categoryId": "3",
+      "typeId": "3",
       "driverId": "1",
       "sizes": [
         "S (Iki 1.65m)",
@@ -155,7 +155,7 @@
       "id": 12,
       "title": "S-Works Turbo Kenevo SL",
       "description": "Dviračio geometrija pritaikyta suaugusiems vyrams ir moterims.",
-      "categoryId": "3",
+      "typeId": "3",
       "driverId": "1",
       "sizes": [
         "S (Iki 1.65m)",
@@ -167,7 +167,7 @@
       "price": 5.22
     }
   ],
-  "categories": [
+  "types": [
     {
       "id": "1",
       "label": "Kalnų"

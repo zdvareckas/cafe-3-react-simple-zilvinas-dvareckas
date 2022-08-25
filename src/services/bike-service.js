@@ -1,6 +1,6 @@
 const domain = process.env.REACT_APP_SERVER_ADDRESS;
 const collectionName = 'bikes';
-const relationshipParams = '_expand=category&_expand=driver';
+const relationshipParams = '_expand=type&_expand=driver';
 
 const fetchAll = async () => {
   const response = await fetch(`${domain}/${collectionName}?${relationshipParams}`);

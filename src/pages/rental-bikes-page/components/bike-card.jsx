@@ -19,7 +19,7 @@ const BikeCard = ({
   title,
   img,
   description,
-  category,
+  type,
   sizes,
   driver,
   price,
@@ -48,7 +48,7 @@ const BikeCard = ({
         <Typography variant="body1">
           {description}
         </Typography>
-        <Chip size="small" color="primary" label={category} />
+        <Chip size="small" color="primary" label={type} />
         <Chip size="small" color="primary" label={driver} />
         <Box sx={{
           display: 'flex',
@@ -86,7 +86,7 @@ const BikeCard = ({
             alert('Pasirinkite dydi prieš pridedami.');
           } else {
             addToOrder({
-              id, title, bikeSize, price, category, img, customSizeID,
+              id, title, bikeSize, price, type, img, customSizeID,
             });
           }
         }}

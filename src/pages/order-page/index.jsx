@@ -5,7 +5,7 @@ import BikeOrderContext from '../../contexts/bike-order-context';
 import Cart from './components/cart';
 
 const fetchItem = async ({ id, bikeSize }) => {
-  const response = await fetch(`http://localhost:8000/bikes/${id}?_expand=category`);
+  const response = await fetch(`http://localhost:8000/bikes/${id}?_expand=type`);
   const item = await response.json();
 
   return {
@@ -51,7 +51,7 @@ const OrderPage = () => {
         </Typography>
         <Box>
           {order.map(({
-            id, title, count, bikeSize, price, category, img,
+            id, title, count, bikeSize, price, type, img,
           }) => (
             <OrderItem
               key={`${id}${bikeSize}`}
@@ -60,7 +60,7 @@ const OrderPage = () => {
               count={count}
               bikeSize={bikeSize}
               price={price}
-              category={category}
+              type={type}
               img={img}
             />
           ))}

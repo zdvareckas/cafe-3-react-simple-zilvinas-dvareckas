@@ -14,7 +14,7 @@ const OrderItem = ({
   title,
   bikeSize,
   price,
-  category,
+  type,
   img,
 }) => {
   const { deleteOrderItem } = React.useContext(BikeOrderContext);
@@ -44,7 +44,7 @@ const OrderItem = ({
             {title}
           </Typography>
           <Typography>
-            {category.label}
+            {type.label}
           </Typography>
           <Typography>
             {bikeSize}

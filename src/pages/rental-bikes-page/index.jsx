@@ -24,7 +24,7 @@ const RentalBikesPage = () => {
           id,
           title,
           description,
-          category,
+          type,
           img,
           sizes,
           driver,
@@ -35,7 +35,7 @@ const RentalBikesPage = () => {
             id={id}
             title={title}
             description={description}
-            category={category.label}
+            type={type.label}
             img={img}
             sizes={sizes}
             driver={driver.label}

@@ -10,24 +10,26 @@ import {
   Radio,
   FormLabel,
 } from '@mui/material';
+import bikeDriversService from '../../../services/bike-drivers-service';
+import bikeCategoriesService from '../../../services/bike-category-service';
 
 const Filter = () => {
   const [driverFilter, setDriverFilter] = React.useState('');
   const [bikeTypeFilter, setBikeTypeFilter] = React.useState('');
   const [riderHeightFilter, setRiderHeightFilter] = React.useState(0);
 
-  const [types, setTypes] = React.useState([]);
-  React.useEffect(() => {
-    fetch('http://localhost:8000/categories')
-      .then((res) => res.json())
-      .then((fetchedTypes) => setTypes(fetchedTypes));
-  }, []);
-
+  const [bikeTypes, setBikeTypes] = React.useState([]);
   const [drivers, setDrivers] = React.useState([]);
+
   React.useEffect(() => {
-    fetch('http://localhost:8000/drivers')
-      .then((res) => res.json())
-      .then((fetchedDrivers) => setDrivers(fetchedDrivers));
+    (async () => {
+      const [fetchedTypes, fetchedDrivers] = await Promise.all([
+        bikeCategoriesService.fetchAll(),
+        bikeDriversService.fetchAll(),
+      ]);
+      setBikeTypes(fetchedTypes);
+      setDrivers(fetchedDrivers);
+    })();
   }, []);
 
   return (
@@ -65,7 +67,7 @@ const Filter = () => {
             value={bikeTypeFilter}
             onChange={(_, newBikeType) => setBikeTypeFilter(newBikeType)}
           >
-            {types.map(({ id, label }) => (
+            {bikeTypes.map(({ id, label }) => (
               <FormControlLabel
                 key={id}
                 value={label}
