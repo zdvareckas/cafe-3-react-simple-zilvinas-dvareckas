@@ -7,7 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import BikeOrderContext from '../../../contexts/bike-order-context';
+// import BikeOrderContext from '../../../contexts/bike-order-context';
 
 const OrderItem = ({
   id,
@@ -16,10 +16,12 @@ const OrderItem = ({
   price,
   type,
   img,
+  count,
+  onDelete,
 }) => {
-  const { deleteOrderItem } = React.useContext(BikeOrderContext);
-  const customSizeID = `${id}${bikeSize}`;
-  const [count, setCount] = React.useState(1);
+  // const { deleteOrderItem } = React.useContext(BikeOrderContext);
+  // const customSizeID = `${id}${bikeSize}`;
+  const [bikeCount, setBikeCount] = React.useState(count);
 
   return (
     <>
@@ -59,8 +61,8 @@ const OrderItem = ({
         }}
         >
           <TextField
-            value={count}
-            onChange={(e) => setCount(e.target.value)}
+            value={bikeCount}
+            onChange={(e) => setBikeCount(e.target.value)}
             type="number"
             size="small"
             sx={{ width: '100px' }}
@@ -70,11 +72,11 @@ const OrderItem = ({
             €
           </Typography>
           <Typography sx={{ width: '60px' }}>
-            {(price * count).toFixed(2)}
+            {(price * bikeCount).toFixed(2)}
             €
           </Typography>
         </Box>
-        <IconButton onClick={() => deleteOrderItem({ customSizeID })}><DeleteIcon /></IconButton>
+        <IconButton onClick={onDelete}><DeleteIcon /></IconButton>
       </Box>
       <Divider sx={{ backgroundColor: 'grey.400', my: 2 }} />
     </>

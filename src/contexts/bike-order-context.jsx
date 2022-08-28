@@ -10,8 +10,8 @@ export const OrderContext = ({ children }) => {
     addToOrder: (item) => {
       setOrderItems([...orderItems, item]);
     },
-    deleteOrderItem: (item) => setOrderItems(
-      orderItems.filter((x) => (x.customSizeID !== item.customSizeID)),
+    deleteOrderItem: (customSizeID) => setOrderItems(
+      orderItems.filter((x) => (x.customSizeID !== customSizeID)),
     ),
   }), [orderItems]);
 

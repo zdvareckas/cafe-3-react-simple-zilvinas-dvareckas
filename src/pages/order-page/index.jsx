@@ -11,6 +11,7 @@ const fetchItem = async ({ id, bikeSize }) => {
   return {
     ...item,
     bikeSize,
+    customSizeID: `${item.id}${bikeSize}`,
   };
 };
 
@@ -21,7 +22,7 @@ const fetchOrderItems = async (orderItems) => {
 };
 
 const OrderPage = () => {
-  const { orderItems } = React.useContext(BikeOrderContext);
+  const { orderItems, deleteOrderItem } = React.useContext(BikeOrderContext);
   const [order, setOrder] = React.useState([]);
 
   React.useEffect(() => {
@@ -51,10 +52,10 @@ const OrderPage = () => {
         </Typography>
         <Box>
           {order.map(({
-            id, title, count, bikeSize, price, type, img,
+            id, title, count, bikeSize, price, type, img, customSizeID,
           }) => (
             <OrderItem
-              key={`${id}${bikeSize}`}
+              key={customSizeID}
               id={id}
               title={title}
               count={count}
@@ -62,6 +63,7 @@ const OrderPage = () => {
               price={price}
               type={type}
               img={img}
+              onDelete={() => deleteOrderItem(customSizeID)}
             />
           ))}
         </Box>
