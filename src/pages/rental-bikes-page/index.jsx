@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Typography } from '@mui/material';
 import BikeCard from './components/bike-card';
 import Filter from './components/filter';
 import { ItemsGrid } from './components';
@@ -19,6 +20,13 @@ const RentalBikesPage = () => {
   return (
     <>
       <Filter />
+      <Typography
+        variant="h4"
+        textAlign="center"
+        sx={{ display: `${bikes.length ? 'none' : ''}`, pt: 10 }}
+      >
+        Atsiprašome, bet šiuo metu tokio tipo dviračių neturime
+      </Typography>
       <ItemsGrid>
         {bikes.map(({
           id,
