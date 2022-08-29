@@ -9,17 +9,48 @@ import {
   RadioGroup,
   Radio,
   FormLabel,
+  IconButton,
 } from '@mui/material';
+import { useSearchParams } from 'react-router-dom';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import bikeDriversService from '../../../services/bike-drivers-service';
 import bikeTypesService from '../../../services/bike-types-service';
 
 const Filter = () => {
-  const [driverFilter, setDriverFilter] = React.useState('');
-  const [bikeTypeFilter, setBikeTypeFilter] = React.useState('');
+  const [driverFilter, setDriverFilter] = React.useState([]);
+  const [bikeTypeFilter, setBikeTypeFilter] = React.useState([]);
   const [riderHeightFilter, setRiderHeightFilter] = React.useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [bikeTypes, setBikeTypes] = React.useState([]);
   const [drivers, setDrivers] = React.useState([]);
+
+  const handleBikeTypeChange = (_, newBikeType) => {
+    if (newBikeType) {
+      searchParams.set('typeId', newBikeType);
+    } else {
+      searchParams.delete('typeId');
+    }
+    setSearchParams(searchParams);
+    setBikeTypeFilter(newBikeType);
+  };
+
+  const handleDriverChange = (_, newDriver) => {
+    if (newDriver) {
+      searchParams.set('driverId', newDriver);
+    } else {
+      searchParams.delete('driverId');
+    }
+
+    setSearchParams(searchParams);
+    setDriverFilter(newDriver);
+  };
+
+  const clearFilters = () => {
+    setSearchParams([]);
+    setDriverFilter([]);
+    setBikeTypeFilter([]);
+  };
 
   React.useEffect(() => {
     (async () => {
@@ -34,6 +65,7 @@ const Filter = () => {
 
   return (
     <Box sx={{
+      position: 'relative',
       display: 'flex',
       flexDirection: 'column',
       width: '700px',
@@ -43,18 +75,25 @@ const Filter = () => {
     }}
     >
       <Typography variant="h5" align="center">Filtrai</Typography>
+      <IconButton
+        color="error"
+        onClick={clearFilters}
+        sx={{ position: 'absolute', right: 15, bottom: 15 }}
+      >
+        <RestartAltIcon />
+      </IconButton>
       <Divider sx={{ my: 2 }} />
       <Box sx={{ display: 'flex', gap: 6 }}>
         <FormControl>
           <FormLabel>Vairuotojas:</FormLabel>
           <RadioGroup
             value={driverFilter}
-            onChange={(_, newDriver) => setDriverFilter(newDriver)}
+            onChange={handleDriverChange}
           >
             {drivers.map(({ id, label }) => (
               <FormControlLabel
                 key={id}
-                value={label}
+                value={id}
                 label={label}
                 control={<Radio />}
               />
@@ -65,12 +104,12 @@ const Filter = () => {
           <FormLabel>Dviračio tipas:</FormLabel>
           <RadioGroup
             value={bikeTypeFilter}
-            onChange={(_, newBikeType) => setBikeTypeFilter(newBikeType)}
+            onChange={handleBikeTypeChange}
           >
             {bikeTypes.map(({ id, label }) => (
               <FormControlLabel
                 key={id}
-                value={label}
+                value={id}
                 control={<Radio />}
                 label={label}
               />
@@ -92,7 +131,9 @@ const Filter = () => {
             onChangeCommitted={(_, newHeight) => setRiderHeightFilter(newHeight)}
           />
         </FormControl>
+
       </Box>
+
     </Box>
   );
 };
