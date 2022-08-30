@@ -10,6 +10,14 @@ const fetchAll = async (searchParams = null) => {
   return fetchedItems;
 };
 
+const fetchById = async (id) => {
+  const fetchedData = await fetch(`${domain}/${collectionName}/${id}?_expand=type`);
+  const item = await fetchedData.json();
+
+  return item;
+};
+
 export const bikeService = {
   fetchAll,
+  fetchById,
 };

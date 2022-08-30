@@ -3,27 +3,37 @@ import { Box, Button, Typography } from '@mui/material';
 import OrderItem from './components/order-item';
 import BikeOrderContext from '../../contexts/bike-order-context';
 import Cart from './components/cart';
+import { bikeService } from '../../services/bike-service';
 
 const fetchItem = async ({ id, bikeSize }) => {
-  const response = await fetch(`http://localhost:8000/bikes/${id}?_expand=type`);
-  const item = await response.json();
+  const item = await bikeService.fetchById(id);
 
   return {
     ...item,
     bikeSize,
-    customSizeID: `${item.id}${bikeSize}`,
+    customSizeID: `${id}${bikeSize}`,
   };
 };
 
 const fetchOrderItems = async (orderItems) => {
   const items = await Promise.all(orderItems.map((item) => fetchItem(item)));
+  const fetchedItemsWithCount = items.map((item) => ({
+    ...item,
+    count: orderItems
+      .find((x) => x.customSizeID === item.customSizeID)?.count ?? 1,
+  }));
 
-  return items;
+  console.log(fetchedItemsWithCount);
+
+  return fetchedItemsWithCount;
 };
 
 const OrderPage = () => {
   const { orderItems, deleteOrderItem } = React.useContext(BikeOrderContext);
   const [order, setOrder] = React.useState([]);
+
+  const totalPrice = order
+    .reduce((prevValue, { count, price }) => prevValue + (count * price), 0);
 
   React.useEffect(() => {
     (async () => {
@@ -64,6 +74,7 @@ const OrderPage = () => {
               type={type}
               img={img}
               onDelete={() => deleteOrderItem(customSizeID)}
+              customSizeID={customSizeID}
             />
           ))}
         </Box>
@@ -75,7 +86,10 @@ const OrderPage = () => {
         >
           <Box>
             <Typography variant="h6">Iš viso: </Typography>
-            <Typography variant="body2">123.123$</Typography>
+            <Typography variant="body2">
+              {totalPrice}
+              €
+            </Typography>
           </Box>
           <Button variant="contained">Tęsti</Button>
         </Box>

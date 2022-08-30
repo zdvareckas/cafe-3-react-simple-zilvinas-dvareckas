@@ -7,21 +7,26 @@ import {
   Typography,
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-// import BikeOrderContext from '../../../contexts/bike-order-context';
+import BikeOrderContext from '../../../contexts/bike-order-context';
 
 const OrderItem = ({
   id,
+  customSizeID,
   title,
   bikeSize,
   price,
   type,
   img,
-  count,
   onDelete,
+  count,
 }) => {
-  // const { deleteOrderItem } = React.useContext(BikeOrderContext);
-  // const customSizeID = `${id}${bikeSize}`;
   const [bikeCount, setBikeCount] = React.useState(count);
+  const { updateItemCount } = React.useContext(BikeOrderContext);
+
+  const handleCountChange = async (e) => {
+    setBikeCount(Number(e.target.value));
+    updateItemCount({ customSizeID, bikeCount });
+  };
 
   return (
     <>
@@ -62,7 +67,7 @@ const OrderItem = ({
         >
           <TextField
             value={bikeCount}
-            onChange={(e) => setBikeCount(e.target.value)}
+            onChange={handleCountChange}
             type="number"
             size="small"
             sx={{ width: '100px' }}

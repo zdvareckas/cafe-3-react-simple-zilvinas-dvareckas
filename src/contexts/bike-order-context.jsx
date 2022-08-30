@@ -13,6 +13,11 @@ export const OrderContext = ({ children }) => {
     deleteOrderItem: (customSizeID) => setOrderItems(
       orderItems.filter((x) => (x.customSizeID !== customSizeID)),
     ),
+    updateItemCount: ({ customSizeID, bikeCount }) => setOrderItems(
+      orderItems
+        .map((item) => (item.customSizeID === customSizeID
+          ? { ...item, count: bikeCount } : item)),
+    ),
   }), [orderItems]);
 
   return (
