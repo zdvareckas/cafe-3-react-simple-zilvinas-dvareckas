@@ -5,6 +5,7 @@ import OrderItem from './components/order-item';
 import BikeOrderContext from '../../contexts/bike-order-context';
 import Cart from './components/cart';
 import { bikeService } from '../../services/bike-service';
+import CartFooter from './components/cart-footer';
 
 const fetchItem = async ({ id, bikeSize }) => {
   const item = await bikeService.fetchById(id);
@@ -90,22 +91,7 @@ const OrderPage = () => {
             />
           ))}
         </Box>
-
-        <Box sx={{
-          display: `${orderItems.length === 0 ? 'none' : 'flex'}`,
-          justifyContent: 'space-between',
-          pt: 1,
-        }}
-        >
-          <Box>
-            <Typography variant="h6">Iš viso: </Typography>
-            <Typography variant="body2">
-              {totalPrice}
-              €
-            </Typography>
-          </Box>
-          <Button variant="contained">Tęsti</Button>
-        </Box>
+        <CartFooter totalPrice={totalPrice} />
       </Cart>
     </Box>
   );
