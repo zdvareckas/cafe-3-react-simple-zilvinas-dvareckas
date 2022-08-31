@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Box, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import OrderItem from './components/order-item';
 import BikeOrderContext from '../../contexts/bike-order-context';
 import Cart from './components/cart';
@@ -29,6 +30,7 @@ const fetchOrderItems = async (orderItems) => {
 const OrderPage = () => {
   const { orderItems, deleteOrderItem, updateItemCount } = React.useContext(BikeOrderContext);
   const [order, setOrder] = React.useState([]);
+  const navigate = useNavigate();
 
   const totalPrice = order
     .reduce((prevValue, { count, price }) => prevValue + (count * price), 0);
@@ -58,6 +60,17 @@ const OrderPage = () => {
         >
           {orderItems.length === 0 ? 'Užsakymas yra tuščias..' : 'Jūsu pasirinkti dviračiai..'}
         </Typography>
+
+        <Button
+          variant="contained"
+          sx={{
+            display: `${orderItems.length === 0 ? '' : 'none'}`,
+            my: 1,
+          }}
+          onClick={() => navigate('/rental-bikes')}
+        >
+          Grįžti į sąrašą
+        </Button>
         <Box>
           {order.map(({
             id, title, count, bikeSize, price, type, img, customSizeID,
@@ -77,6 +90,7 @@ const OrderPage = () => {
             />
           ))}
         </Box>
+
         <Box sx={{
           display: `${orderItems.length === 0 ? 'none' : 'flex'}`,
           justifyContent: 'space-between',
