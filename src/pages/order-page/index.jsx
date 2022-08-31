@@ -23,8 +23,6 @@ const fetchOrderItems = async (orderItems) => {
       .find((x) => x.customSizeID === item.customSizeID)?.count ?? 1,
   }));
 
-  console.log(fetchedItemsWithCount);
-
   return fetchedItemsWithCount;
 };
 

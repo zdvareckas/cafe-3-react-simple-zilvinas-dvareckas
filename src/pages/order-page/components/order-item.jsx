@@ -23,10 +23,14 @@ const OrderItem = ({
   const [bikeCount, setBikeCount] = React.useState(count);
   const { updateItemCount } = React.useContext(BikeOrderContext);
 
-  const handleCountChange = async (e) => {
+  const handleCountChange = (e) => {
     setBikeCount(Number(e.target.value));
-    updateItemCount({ customSizeID, bikeCount });
   };
+
+  React.useEffect(() => {
+    updateItemCount({ customSizeID, bikeCount });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bikeCount]);
 
   return (
     <>

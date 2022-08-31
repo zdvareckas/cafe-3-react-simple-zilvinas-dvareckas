@@ -13,11 +13,17 @@ export const OrderContext = ({ children }) => {
     deleteOrderItem: (customSizeID) => setOrderItems(
       orderItems.filter((x) => (x.customSizeID !== customSizeID)),
     ),
-    updateItemCount: ({ customSizeID, bikeCount }) => setOrderItems(
-      orderItems
-        .map((item) => (item.customSizeID === customSizeID
-          ? { ...item, count: bikeCount } : item)),
-    ),
+    updateItemCount: ({ customSizeID, bikeCount }) => {
+      if (bikeCount > 0) {
+        setOrderItems(
+          orderItems
+            .map((item) => (item.customSizeID === customSizeID
+              ? { ...item, count: bikeCount } : item)),
+        );
+      } else {
+        setOrderItems(orderItems.filter((item) => item.customSizeID !== customSizeID));
+      }
+    },
   }), [orderItems]);
 
   return (
