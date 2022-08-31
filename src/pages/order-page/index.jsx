@@ -27,7 +27,7 @@ const fetchOrderItems = async (orderItems) => {
 };
 
 const OrderPage = () => {
-  const { orderItems, deleteOrderItem } = React.useContext(BikeOrderContext);
+  const { orderItems, deleteOrderItem, updateItemCount } = React.useContext(BikeOrderContext);
   const [order, setOrder] = React.useState([]);
 
   const totalPrice = order
@@ -72,6 +72,7 @@ const OrderPage = () => {
               type={type}
               img={img}
               onDelete={() => deleteOrderItem(customSizeID)}
+              onUpdateCount={updateItemCount}
               customSizeID={customSizeID}
             />
           ))}

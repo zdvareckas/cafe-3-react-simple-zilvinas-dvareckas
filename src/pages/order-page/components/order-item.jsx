@@ -7,7 +7,6 @@ import {
   Typography,
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import BikeOrderContext from '../../../contexts/bike-order-context';
 
 const OrderItem = ({
   id,
@@ -17,18 +16,18 @@ const OrderItem = ({
   price,
   type,
   img,
-  onDelete,
   count,
+  onDelete,
+  onUpdateCount,
 }) => {
   const [bikeCount, setBikeCount] = React.useState(count);
-  const { updateItemCount } = React.useContext(BikeOrderContext);
 
   const handleCountChange = (e) => {
     setBikeCount(Number(e.target.value));
   };
 
   React.useEffect(() => {
-    updateItemCount({ customSizeID, bikeCount });
+    onUpdateCount({ customSizeID, bikeCount });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bikeCount]);
 
