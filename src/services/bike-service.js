@@ -11,7 +11,7 @@ const fetchAll = async (searchParams = null) => {
 };
 
 const fetchById = async (id) => {
-  const fetchedData = await fetch(`${domain}/${collectionName}/${id}?_expand=type`);
+  const fetchedData = await fetch(`${domain}/${collectionName}/${id}?${relationshipParams}`);
   const item = await fetchedData.json();
 
   return item;
