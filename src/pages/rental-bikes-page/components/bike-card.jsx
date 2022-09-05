@@ -11,6 +11,7 @@ import {
   Select,
   Typography,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { Image } from '../../../components';
 import BikeOrderContext from '../../../contexts/bike-order-context';
 
@@ -27,8 +28,9 @@ const BikeCard = ({
   const [bikeSize, setBikeSize] = React.useState('');
   const { orderItems, addToOrder } = React.useContext(BikeOrderContext);
 
-  const isExist = !!orderItems.find((x) => x.id === id && x.bikeSize === bikeSize);
+  const isDisabled = !!orderItems.find((x) => x.id === id && x.bikeSize === bikeSize);
   const customSizeID = `${id}${bikeSize}`;
+  const navigate = useNavigate();
 
   return (
     <Card key={id} sx={{ borderRadius: '5px 5px 25px 25px' }}>
@@ -76,23 +78,36 @@ const BikeCard = ({
           </Typography>
         </Box>
       </CardContent>
-      <Button
-        color="secondary"
-        disabled={isExist}
-        variant="contained"
-        fullWidth
-        onClick={() => {
-          if (bikeSize.length === 0) {
-            alert('Pasirinkite dydi prieš pridedami.');
-          } else {
-            addToOrder({
-              id, title, bikeSize, price, type, img, customSizeID,
-            });
-          }
-        }}
-      >
-        Užsakyti
-      </Button>
+      <Box sx={{ display: 'flex', justifyContet: 'center' }}>
+        <Button
+          color="secondary"
+          variant="contained"
+          fullWidth
+          disabled={isDisabled}
+          sx={{ borderRadius: 0 }}
+          onClick={() => {
+            if (bikeSize.length === 0) {
+              alert('Pasirinkite dydi prieš pridedami.');
+            } else {
+              addToOrder({
+                id, title, bikeSize, price, type, img, customSizeID,
+              });
+            }
+          }}
+        >
+          Užsakyti
+        </Button>
+
+        <Button
+          variant="contained"
+          color="secondary"
+          fullWidth
+          sx={{ borderRadius: 0 }}
+          onClick={() => navigate(`/bike/${id}`)}
+        >
+          Peržiūrėti
+        </Button>
+      </Box>
     </Card>
   );
 };
